@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>电视直播</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/material-design-lite/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://cdn.staticfile.org/material-design-lite/1.3.0/material.min.js"></script>
+
+    <style>
+        .li-channel.active {
+            background: #dddddd;
+        }
+    </style>
+    <style>
+        .mdl-list__item-primary-content {
+            overflow: hidden;
+        }
+        .mdl-list__item-sub-title {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+<body>
+<div class="mdl-layout__container">
+    <div style="background-color: #000000">
+        <video id="video" src="" style="width: 100%;" preload="auto" controls></video>
+    </div>
+
+    <div style="max-height: 380px; overflow-y: scroll">
+        <ul class="demo-list-two mdl-list" id="ul-channels">
+            <li class="mdl-list__item mdl-list__item--two-line li-channel">
+                <span class="mdl-list__item-primary-content">
+                  <span>空</span>
+                  <span class="mdl-list__item-sub-title"></span>
+                </span>
+                <span class="mdl-list__item-secondary-content">
+                  <span class="mdl-list__item-secondary-info"></span>
+                      <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons"></i></a>
+                </span>
+            </li>
+        </ul>
+        <i class="material-icons" style="float: right" id="btn-tools"><small>build</small></i>
+    </div>
+
+    <div id="tools" style="display: none">
+        <!-- Floating Multiline Textfield -->
+        <form action="#">
+            <div class="mdl-textfield mdl-js-textfield" style="width: 100%">
+            <textarea class="mdl-textfield__input" type="text" rows="3" id="text"></textarea>
+                <label class="mdl-textfield__label" for="text">直播源</label>
+            </div>
+            <div>
+                <!-- Colored FAB button -->
+                <button id="btn-add" class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-js-ripple-effect" style="float: right">
+                    <i class="material-icons">add</i>
+                </button>
+                <button id="btn-check" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">检查</button>
+                <button id="btn-build" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">生成文本</button>
+                <button id="btn-persist" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">存储文本</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="demo-snackbar-example" class="mdl-js-snackbar mdl-snackbar">
+    <div class="mdl-snackbar__text"></div>
+    <button class="mdl-snackbar__action" type="button"></button>
+</div>
+<script src="https://cdn.staticfile.org/jquery/3.1.1/jquery.min.js"></script>
+<script>
+    var channels;
+
+    $('#text').val(localStorage.channels);
+    init();
+    function init () {
+        channels = [];
+        $('.li-channel:not(:first-child)').remove();
+        var text = $('#text').val();
+        if(text == '') {
+            return;
+        }
+
+        var lines = text.split('\n');
+
+        var li = $('.li-channel');
+        li.remove();
+        for(var i = 0; i < lines.length; i++) {
+            var line = lines[i];
+            if(line == "") {
+                continue;
+            }
+            var lineArray = line.split(',');
+
+            if(lineArray[1].indexOf("#") == -1) {
+                channels.push({name: lineArray[0], url: lineArray[1]});
+                li = li.clone();
+                li.find(".mdl-list__item-primary-content>span:first-child").text(lineArray[0]);
+                li.find(".mdl-list__item-sub-title").text(lineArray[1]);
+                $('#ul-channels').append(li);
+            } else {
+                var urls = lineArray[1].split('#');
+                for(var j = 0; j < urls.length; j++) {
+                    channels.push({name: lineArray[0], url: urls[j]});
+                    li = li.clone();
+                    li.find(".mdl-list__item-primary-content>span:first-child").text(lineArray[0]);
+                    li.find(".mdl-list__item-sub-title").text(urls[j]);
+                    $('#ul-channels').append(li);
+                }
+            }
+        }
+    }
+
+    $('#btn-add').on('click', function() {
+        init();
+    });
+
+    $('#ul-channels').on('click', 'li', function () {
+        var channel = channels[$(this).index()];
+        $('#video').attr('src', channel.url);
+        $('#video')[0].play();
+
+        $('#ul-channels li').removeClass('active');
+        $(this).addClass('active');
+        console.log(channel)
+    });
+
+    $('#btn-check').on('click', function() {
+        /*for(var i = 0; i<channels.length; i++) {
+            console.log(i);
+            check(i);
+
+        }*/
+
+        var i = 0;
+        var it = setInterval(function() {
+            if(i > channels.length - 1) {
+                clearInterval(it);
+                return;
+            }
+            check(i++);
+        }, 3000)
+    });
+    function check(i) {
+        var li = $('.li-channel').eq(i);
+        li.find('.mdl-list__item-secondary-action .material-icons').text('sync');
+        $.ajax({
+            url: channels[i].url,
+            method: 'GET',
+            dataType: "jsonp",
+            success: function(data, textStatus, xhr) {
+                console.log("success"+xhr.status);
+                alert('success')
+            },
+            complete: function(xhr, textStatus) {
+                console.log("complete"+xhr.status);
+                channels[i].status = xhr.status;
+                if(xhr.status == '200') {
+                    li.find('.mdl-list__item-secondary-action .material-icons').text('check_circle');
+                } else {
+                    li.find('.mdl-list__item-secondary-info').text(xhr.status);
+                    li.find('.mdl-list__item-secondary-action .material-icons').text('clear');
+                }
+            }
+        })
+    }
+
+    var snackbarContainer = document.querySelector('#demo-snackbar-example');
+    $('#btn-build').on('click', function() {
+        var text = '';
+        for(var i = 0; i < channels.length; i++) {
+            var channel = channels[i];
+            if(channel.status == '200') {
+                text += channel.name + ',' + channel.url + '\n';
+            }
+        }
+        console.log(text);
+        $('#text').val(text);
+        var data = {message: '操作成功'};
+        snackbarContainer.MaterialSnackbar.showSnackbar(data);
+    });
+
+    $('#btn-persist').on('click', function () {
+        localStorage.channels = $('#text').val();
+    });
+
+    $('#btn-tools').on('click', function () {
+        $('#tools').toggle()
+    })
+</script>
+</body>
+</html>
