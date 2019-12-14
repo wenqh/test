@@ -67,3 +67,13 @@ http://113.172.65.238:2806/rtp/232.84.1.40:8214
 http://btsu4k5-hisng.cdn.hinet.net:8080/live/pool/4gtv-4gtv108/litv-pc/index.m3u8
 #EXTINF:-1 group-title="亚洲3s",122
 http://www.chengbo.org/proxy/4gtv.m3u8?id=vtv4
+
+
+人间卫视
+http://54.64.23.79:1935/live/vod/playlist.m3u8
+生命频道
+http://211.73.19.201/live/E6290DC0-BE6A-B7C4-79F5-114BDB417F9E.m3u8?fmt=x264_500K_ts&cpid=admin&size=1280X720
+佛卫慈悲台
+http://btsw-ott2b.cdn.hinet.net/live_bts/btsw01/chunklist.m3u8
+上电德视
+http://flv.ccdntech.com/live/_definst_/mp4:vod150_Live/live/chunklist_w250050579.m3u8
