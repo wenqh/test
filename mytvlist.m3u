@@ -27,8 +27,6 @@ http://121.31.30.90:8085/ysten-business/live/yangguangstv/yst.m3u8
 http://118.163.88.61:1935/hwazanlivetv/live.stream/playlist.m3u8
 #EXTINF:-1 tvg-id="7229" tvg-name="唯心电视" tvg-logo="https://i.imgur.com/LkbfQoZ.jpg" group-title="亚洲3s",唯心电视台
 http://mobile.ccdntech.com/transcoder/_definst_/vod164_Live/live/chunklist_w1177047531.m3u8
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="亚洲3s",VTV4
-http://113.172.65.238:2806/rtp/232.84.1.40:8214
 #EXTINF:-1 tvg-id="6029" tvg-name="人间卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/BeautifulLife.png" group-title="亚洲3s",人间卫视
 http://54.64.23.79:1935/live/vod/playlist.m3u8
 #EXTINF:-1 tvg-id="6124" tvg-name="生命频道" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/shengming.png" group-title="亚洲3s",生命电视
@@ -41,6 +39,8 @@ http://flv.ccdntech.com/live/_definst_/mp4:vod150_Live/live/chunklist_w250050579
 https://live.ntdimg.com/aplive200/playlist.m3u8
 #EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="https://i.imgur.com/4KtjyeR.jpg" group-title="亚洲3s",唐
 http://174.127.67.246/live400/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="亚洲3s",VTV4
+http://113.172.65.238:2806/rtp/232.84.1.40:8214
 #EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="亚洲3s",周星驰
 rtmp://tx2play1.douyucdn.cn/live/122402rK7MO9bXSq_4000p
 #EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="亚洲3s",林正英电影
