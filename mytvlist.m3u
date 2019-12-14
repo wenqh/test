@@ -3,11 +3,11 @@
 http://luotian.live.cjyun.org/video/s10013-LTZH.m3u8
 #EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="亚洲3s",罗田旅游
 http://luotian.live.cjyun.org/video/s10013-LTLY.m3u8
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="亚洲3s",湖北电视台
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/hubei.png" group-title="亚洲3s",湖北电视台
 http://live.cjyun.org/hubeitv/s10008-live-hbzh.m3u8
 #EXTINF:-1 tvg-id="48" tvg-name="湖北卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/hubei.png" group-title="亚洲3s",湖北卫视
 http://live.cjyun.org/hubeitv/s10008-live-hbws.m3u8
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="亚洲3s",湖北经视
+#EXTINF:-1 tvg-id="1784" tvg-name="湖北经济频道" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/hubei.png" group-title="亚洲3s",湖北经济频道
 http://live.cjyun.org/hubeitv/s10008-live-hbjs.m3u8
 #EXTINF:-1 tvg-id="1783" tvg-name="湖北公共·新闻" tvg-logo="http://epg.51zmt.top:8000/tb1/qt/HUBEI7.png" group-title="亚洲3s",湖北公共
 http://live.cjyun.org/hubeitv/s10008-live-hbgg.m3u8
@@ -17,17 +17,17 @@ http://live.cjyun.org/hubeitv/s10008-live-hbys.m3u8
 http://live.cjyun.org/hubeitv/s10008-live-hbsh.m3u8
 #EXTINF:-1 tvg-id="1780" tvg-name="湖北教育频道" tvg-logo="http://epg.51zmt.top:8000/tb1/qt/HUBEI4.png" group-title="亚洲3s",湖北教育
 http://live.cjyun.org/hubeitv/s10008-live-hbjy.m3u8
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="亚洲3s",垄上频道
+#EXTINF:-1 tvg-id="1785" tvg-name="湖北垄上频道" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/hubei.png" group-title="亚洲3s",湖北垄上频道
 http://live.cjyun.org/hubeitv/s10008-live-hbls.m3u8
 #EXTINF:-1 tvg-id="144" tvg-name="阳光卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/yangguangweishi.png" group-title="亚洲3s",阳光卫视
 https://stream.chinasuntv.com/680k/mid_video_index.m3u8
 #EXTINF:-1 tvg-id="144" tvg-name="阳光卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/yangguangweishi.png" group-title="亚洲3s",阳光卫视
 http://121.31.30.90:8085/ysten-business/live/yangguangstv/yst.m3u8
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="亚洲3s",华藏卫视
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/HwaZanTV.png" group-title="亚洲3s",华藏卫视
 http://118.163.88.61:1935/hwazanlivetv/live.stream/playlist.m3u8
-#EXTINF:-1 tvg-id="7229" tvg-name="唯心电视" tvg-logo="https://i.imgur.com/LkbfQoZ.jpg" group-title="亚洲3s",唯心电视
+#EXTINF:-1 tvg-id="7229" tvg-name="唯心电视" tvg-logo="https://i.imgur.com/LkbfQoZ.jpg" group-title="亚洲3s",唯心电视台
 http://mobile.ccdntech.com/transcoder/_definst_/vod164_Live/live/chunklist_w1177047531.m3u8
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="亚洲3s",唐
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="https://i.imgur.com/4KtjyeR.jpg" group-title="亚洲3s",唐
 http://174.127.67.246/live400/playlist.m3u8
 #EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="https://i.imgur.com/4KtjyeR.jpg" group-title="亚洲3s",唐
 https://live.ntdimg.com/aplive200/playlist.m3u8
