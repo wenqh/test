@@ -23,7 +23,7 @@ var lastCode = $('.lottery-open-list .code:first').text()
  console.log('上期' + lastIssue + '号码：' + lastCode)
 
 var code = lastCode.split(",")[4]
-
+//对应号
 if(ya == null || lastCode.indexOf(ya) > -1) {
     times=1
     console.log("中奖")
@@ -36,11 +36,11 @@ if(ya == null || lastCode.indexOf(ya) > -1) {
     console.log("没中")
 }
 
-
+//if(times === 2 || times === 8 || times === 32 || times === 128) {
 if(times === 1) {
         ya = dyh[code]
-    } else if(times === 8) {
-      ya = dyh[code]
+    } else {
+     
     }
 
     console.log("押" + ya + ", " + (times*16) + "倍")
