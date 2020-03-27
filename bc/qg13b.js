@@ -5,6 +5,7 @@ throw "error password"
 }
 
 
+
 var lastBet = null;
 var times = 1;
 var ya = null;
@@ -38,9 +39,9 @@ if(ya == null || lastCode.indexOf(ya) > -1) {
 
 if(times === 1) {
         ya = dyh[code]
-} else if(times === 16) {
+    } else if(times === 8) {
       ya = dyh[code]
-}
+    }
 
     console.log("押" + ya + ", " + (times*16) + "倍")
  $('.balls .item')[ya].click();
