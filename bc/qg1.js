@@ -40,8 +40,8 @@ if(lastBet == null || (code[0] !== code[1] &&
 if(times === 1) {
         //ya = dyh[code]
     } else {
-  if(i >=4){
-    i=0
+  if(t >=4){
+    t=0
   }
       ya = dyh[++t]
     }
