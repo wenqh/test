@@ -4,11 +4,12 @@ if("8b44eb32a49644f3908b9313bd6c8eb0" !== pwd) {
 throw "error password"
 }
 
+
 var lastBet = null;
 var times = 1;
-var ya = null;
-var lastBei = 1;
-var dyh = {0:5,1:7,2:9,3:6,4:8,5:0,6:3,7:1,8:4,9:2};
+var dyh = ['48','05','29','17','36'];
+var ya = dyh[0];
+var t = 0;
 function main() {
  var lastIssue = $('.lottery-open-list .issue:first').text();
  if(lastBet === lastIssue) {
@@ -20,31 +21,44 @@ var lastCode = $('.lottery-open-list .code:first').text()
 
  console.log('上期' + lastIssue + '号码：' + lastCode)
 
-var code = lastCode.split(",")[4]
-//对应号
-if(ya == null || lastCode.indexOf(ya) > -1) {
+var code = [lastCode.split(",")[3], lastCode.split(",")[4]]
+
+if(lastBet == null || (code[0] !== code[1] &&
+ ya.indexOf(code[0]) == -1 && ya.indexOf(code[1]) == -1)) {
     times=1
     console.log("中奖")
 } else {
-    if(times >= 128) {
+    if(times >= 81) {
        times = 1
     } else {
-        times*=2
+        times*=3
     }
     console.log("没中")
 }
 
-//if(times === 2 || times === 8 || times === 32 || times === 128) {
+
 if(times === 1) {
-        ya = dyh[code]
+        //ya = dyh[code]
     } else {
-     
+  if(i >=4){
+    i=0
+  }
+      ya = dyh[++t]
     }
 
-    console.log("押" + ya + ", " + (times*72) + "倍")
- $('.balls .item')[ya].click();
- $('.multiple input')[0].value = (times*72);
+    console.log("不押" + ya + ", " + times + "倍")
+ 
+ for(var i = 0; i<10; i++) {
+  if(ya.indexOf(i+"") == -1) {
+   $('.balls .item')[i].click();
+    }
+
+ }
+ 
+ 
+ $('.multiple input')[0].value = (times);
  $('[data-command=quick-bet]')[0].click()
+
 
 
 lastBet = lastIssue
