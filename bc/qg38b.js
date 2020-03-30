@@ -4,12 +4,11 @@ if("2b99eb64a49644f3908b9313bd6c8eb0" !== pwd) {
 throw "error password"
 }
 
-
 var lastBet = null;
 var times = 1;
 var dyh = ['48','05','29','17','36'];
+var ya = dyh[0];
 var t = 0;
-var ya = dyh[t++];
 function main() {
  var lastIssue = $('.lottery-open-list .issue:first').text();
  if(lastBet === lastIssue) {
@@ -40,10 +39,10 @@ if(lastBet == null || (code[0] !== code[1] &&
 if(times === 1) {
         //ya = dyh[code]
     } else {
-    if(t >4){
-        t=0
-     }
-      ya = dyh[t++]
+  if(t >=4){
+    t=0
+  }
+      ya = dyh[++t]
     }
 
     console.log("不押" + ya + ", " + (times*2) + "倍")
