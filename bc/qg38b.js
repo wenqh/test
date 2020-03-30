@@ -7,67 +7,61 @@ throw "error password"
 
 var lastBet = null;
 var times = 1;
-var ya = null;
-var lastBei = 1;
-var dyh = {0:5,1:7,2:9,3:6,4:8,5:0,6:3,7:1,8:4,9:2};
+var dyh = ['48','05','29','17','36'];
+var t = 0;
+var ya = dyh[t++];
 function main() {
- var lastIssue = $('.ifno-number:first').text()
+ var lastIssue = $('.lottery-open-list .issue:first').text();
  if(lastBet === lastIssue) {
   console.log("等下一期");
   return;
  }
 
-var lastCode = $('.historyline ul:first').text()
+var lastCode = $('.lottery-open-list .code:first').text()
 
  console.log('上期' + lastIssue + '号码：' + lastCode)
 
-var code = lastCode.split("")[4]
-//对应号
-if(ya == null || lastCode.indexOf(ya) > -1) {
+var code = [lastCode.split(",")[3], lastCode.split(",")[4]]
+
+if(lastBet == null || (code[0] !== code[1] &&
+ ya.indexOf(code[0]) == -1 && ya.indexOf(code[1]) == -1)) {
     times=1
     console.log("中奖")
 } else {
-    if(times >= 128) {
+    if(times >= 81) {
        times = 1
     } else {
-        times*=2
+        times*=3
     }
     console.log("没中")
 }
 
-//if(times === 2 || times === 8 || times === 32 || times === 128) {
+
 if(times === 1) {
-        ya = dyh[code]
+        //ya = dyh[code]
     } else {
-     
+    if(t >4){
+        t=0
+     }
+      ya = dyh[t++]
     }
 
+    console.log("不押" + ya + ", " + (times*2) + "倍")
+ 
+ for(var i = 0; i<10; i++) {
+  if(ya.indexOf(i+"") == -1) {
+   $('.balls .item')[i].click();
+    }
+
+ }
+ 
+ 
+ $('.multiple input')[0].value = (times*2);
+ $('[data-command=quick-bet]')[0].click()
+
+
+
 lastBet = lastIssue
-
-times = times * 1//这里调倍数
-    console.log("押" + ya + ", " + times + "倍")
- 
-$(".num-ul a")[ya].click();
-for(var i=0; i<times-1; i++)  {
-   console.log("+倍数")
-   $(".btn-add")[0].click()
-}
-
-setTimeout(function() {
-    $(".bet-btn .btn-c1")[1].click()
- }, 1000)
-
-
-setTimeout(function() {
- for(var i=0; i<128; i++)  {
-   console.log("-倍数")
-    $(".btnSub")[0].click()
-  }
- }, 2000)
- 
-
-
-
 }
 
 setInterval(main, 1000);
