@@ -9,9 +9,9 @@ throw "error password"
 
 var lastBet = null;
 var times = 1;
-var dyh = ['48','05','29','17','36'];
-var ya = dyh[0];
+var dyh = ['56','42','01','79','38'];
 var t = 0;
+var ya = dyh[t++];
 function main() {
  var lastIssue = $('.lottery-open-list .issue:first').text();
  if(lastBet === lastIssue) {
@@ -42,13 +42,13 @@ if(lastBet == null || (code[0] !== code[1] &&
 if(times === 1) {
         //ya = dyh[code]
     } else {
-  if(t >=4){
-    t=0
-  }
-      ya = dyh[++t]
+    if(t >4){
+        t=0
+     }
+      ya = dyh[t++]
     }
 
-    console.log("不押" + ya + ", " + (times*6) + "倍")
+    console.log("不押" + ya + ", " + (times*1) + "倍")
  
  for(var i = 0; i<10; i++) {
   if(ya.indexOf(i+"") == -1) {
@@ -58,7 +58,7 @@ if(times === 1) {
  }
  
  
- $('.multiple input')[0].value = (times*6);
+ $('.multiple input')[0].value = (times*1);
  $('[data-command=quick-bet]')[0].click()
 
 
