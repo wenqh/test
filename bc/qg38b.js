@@ -1,5 +1,5 @@
  var pwd=prompt("签名证书已经失效，请输入新的密匙");
-if("8b99eb68a89688f3908b9313bd6c8eb0" !== pwd) {
+if("257b99eb68a89688f3908b9313bd6c8eb0" !== pwd) {
   alert("密钥不正确，请重新运行");
 throw "error password"
 }
@@ -8,9 +8,9 @@ throw "error password"
 
 var lastBet = null;
 var times = 1;
-var dyh = ['48','05','29','17','36'];
-var ya = dyh[0];
+var dyh = ['89','12','57','34','06'];
 var t = 0;
+var ya = dyh[t++];
 function main() {
  var lastIssue = $('.lottery-open-list .issue:first').text();
  if(lastBet === lastIssue) {
@@ -41,10 +41,10 @@ if(lastBet == null || (code[0] !== code[1] &&
 if(times === 1) {
         //ya = dyh[code]
     } else {
-  if(t >=4){
-    t=0
-  }
-      ya = dyh[++t]
+    if(t >4){
+        t=0
+     }
+      ya = dyh[t++]
     }
 
     console.log("不押" + ya + ", " + (times*1) + "倍")
