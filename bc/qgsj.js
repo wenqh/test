@@ -1,5 +1,5 @@
 var pwd=prompt("签名证书已经失效，请输入新的密匙");
-if("0176vmf610eb66x11633f702b9fq8evy" !== pwd) {
+if("68v1mo30eb70x11633p702b9fq8ky" !== pwd) {
   alert("密钥不正确，请重新运行");
 throw "error password"
 }
