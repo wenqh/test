@@ -1,4 +1,3 @@
-
 var pwd=prompt("签名证书已经失效，请输入新的密匙");
 if("0176vmf610eb66x11633f702b9fq8evy" !== pwd) {
   alert("密钥不正确，请重新运行");
@@ -47,7 +46,7 @@ if(times === 1) {
       //ya = dyh[t++]
     }
 
-    console.log("不押" + ya + ", " + (times*5) + "倍")
+    console.log("不押" + ya + ", " + (times*1) + "倍")
  
  for(var i = 0; i<10; i++) {
   if(ya.indexOf(i+"") == -1) {
@@ -57,7 +56,7 @@ if(times === 1) {
  }
  
  
- $('.multiple input')[0].value = (times*5);
+ $('.multiple input')[0].value = (times*1);
  $('[data-command=quick-bet]')[0].click()
 
 
@@ -83,3 +82,5 @@ result.push(arr.splice(ran, 1)[0]);
 
 };
 return ""+result[0] + result[1];
+
+}
