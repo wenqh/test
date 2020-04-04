@@ -47,7 +47,7 @@ if(times === 1) {
       ya = dyh[++t]
     }
 
-    console.log("不押" + ya + ", " + (times*12) + "倍")
+    console.log("不押" + ya + ", " + (times*6) + "倍")
  
  for(var i = 0; i<10; i++) {
   if(ya.indexOf(i+"") == -1) {
@@ -57,7 +57,7 @@ if(times === 1) {
  }
  
  
- $('.multiple input')[0].value = (times*12);
+ $('.multiple input')[0].value = (times*6);
  $('[data-command=quick-bet]')[0].click()
 
 
