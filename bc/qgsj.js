@@ -8,7 +8,7 @@ var lastBet = null;
 var times = 1;
 var dyh = ['48','05','29','17','36'];
 var t = 0;
-var ya = random()
+var ya = dyh[t++];
 function main() {
  var lastIssue = $('.lottery-open-list .issue:first').text();
  if(lastBet === lastIssue) {
@@ -44,6 +44,7 @@ if(times === 1) {
         t=0
      }
       //ya = dyh[t++]
+      ya = random()
     }
 
     console.log("不押" + ya + ", " + (times*1) + "倍")
