@@ -9,8 +9,8 @@ throw "error password"
 var lastBet = null;
 var times = 1;
 var dyh = ['48','05','29','17','36'];
-var ya = dyh[0];
 var t = 0;
+var ya = dyh[t++];
 function main() {
  var lastIssue = $('.lottery-open-list .issue:first').text();
  if(lastBet === lastIssue) {
@@ -39,15 +39,17 @@ if(lastBet == null || (code[0] !== code[1] &&
 
 
 if(times === 1) {
-        //ya = dyh[code]
+        //ya = dyh[0]
+        ya = random()
     } else {
-  if(t >=4){
-    t=0
-  }
-      ya = dyh[++t]
+    if(t >4){
+        t=0
+     }
+      //ya = dyh[t++]
+      ya = random()
     }
 
-    console.log("不押" + ya + ", " + (times*6) + "倍")
+    console.log("不押" + ya + ", " + (times*8) + "倍")
  
  for(var i = 0; i<10; i++) {
   if(ya.indexOf(i+"") == -1) {
@@ -57,7 +59,7 @@ if(times === 1) {
  }
  
  
- $('.multiple input')[0].value = (times*6);
+ $('.multiple input')[0].value = (times*8);
  $('[data-command=quick-bet]')[0].click()
 
 
@@ -66,3 +68,22 @@ lastBet = lastIssue
 }
 
 setInterval(main, 1000);
+
+
+function random() {
+   var arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+var result = [];
+
+var ranNum = 2;
+
+for (var i = 0; i < ranNum; i++) {
+
+var ran = Math.floor(Math.random() * arr.length);
+
+result.push(arr.splice(ran, 1)[0]);
+
+};
+return ""+result[0] + result[1];
+
+}
