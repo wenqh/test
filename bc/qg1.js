@@ -5,9 +5,6 @@ throw "error password"
 }
 
 
-
-
- 
 var lastBet = null;
 var times = 1;
 var dyh = ['大','单','小','双'];
@@ -53,11 +50,11 @@ if(times === 1) {
       ya = dyh[t++]
     }
 
-    console.log("押" + ya + ", " + (times*1) + "倍")
+    console.log("押" + ya + ", " + (times*2) + "倍")
  
   $('.item[data-command=' + clas[ya] + ']')[4].click()
 
- $('.multiple input')[0].value = (times*1);
+ $('.multiple input')[0].value = (times*2);
  $('[data-command=quick-bet]')[0].click()
 
 
@@ -66,3 +63,5 @@ lastBet = lastIssue
 }
 
 setInterval(main, 1000);
+
+ 
