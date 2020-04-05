@@ -4,9 +4,10 @@ if("728vmf010eb66x11633f702b9fq8e30" !== pwd) {
 throw "error password"
 }
 
+
 var lastBet = null;
 var times = 1;
-var dyh = ['48','05','29','17','36'];
+var dyh = ['17','36','48','05','29'];
 var t = 0;
 var ya = dyh[t++];
 function main() {
@@ -37,14 +38,12 @@ if(lastBet == null || (code[0] !== code[1] &&
 
 
 if(times === 1) {
-        //ya = dyh[0]
-        ya = random()
+        //ya = dyh[code]
     } else {
     if(t >4){
         t=0
      }
-      //ya = dyh[t++]
-      ya = random()
+      ya = dyh[t++]
     }
 
     console.log("不押" + ya + ", " + (times*1) + "倍")
@@ -66,22 +65,3 @@ lastBet = lastIssue
 }
 
 setInterval(main, 1000);
-
-
-function random() {
-   var arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-var result = [];
-
-var ranNum = 2;
-
-for (var i = 0; i < ranNum; i++) {
-
-var ran = Math.floor(Math.random() * arr.length);
-
-result.push(arr.splice(ran, 1)[0]);
-
-};
-return ""+result[0] + result[1];
-
-}
