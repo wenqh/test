@@ -50,7 +50,7 @@ if(times === 1) {
       ya = random()
     }
 
-    console.log("不押" + ya + ", " + (times*5) + "倍")
+    console.log("不押" + ya + ", " + (times*4) + "倍")
  
  for(var i = 0; i<10; i++) {
   if(ya.indexOf(i+"") == -1) {
@@ -60,7 +60,7 @@ if(times === 1) {
  }
  
  
- $('.multiple input')[0].value = (times*5);
+ $('.multiple input')[0].value = (times*4);
  $('[data-command=quick-bet]')[0].click()
 
 
