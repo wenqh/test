@@ -7,9 +7,11 @@ throw "error password"
 
 var lastBet = null;
 var times = 1;
-var dyh = ['17','36','48','05','29'];
+var dyh = ['大','单','小','双'];
+var clas = {'小':"small",'单':"single",'双':'double','大':'big'};
+
 var t = 0;
-var ya = dyh[t++];
+var ya = dyh[0];
 function main() {
  var lastIssue = $('.lottery-open-list .issue:first').text();
  if(lastBet === lastIssue) {
@@ -21,10 +23,11 @@ var lastCode = $('.lottery-open-list .code:first').text()
 
  console.log('上期' + lastIssue + '号码：' + lastCode)
 
-var code = [lastCode.split(",")[3], lastCode.split(",")[4]]
+var code = lastCode.split(",")[4]
+var kj = [code < 5 ? '小' : "大", code%2==0 ? '双' : "单"]
+console.log("开奖:" + kj)
 
-if(lastBet == null || (code[0] !== code[1] &&
- ya.indexOf(code[0]) == -1 && ya.indexOf(code[1]) == -1)) {
+if(lastBet == null || kj[0] == ya || kj[1] == ya) {
     times=1
     console.log("中奖")
 } else {
@@ -38,25 +41,20 @@ if(lastBet == null || (code[0] !== code[1] &&
 
 
 if(times === 1) {
-        //ya = dyh[code]
+        t = 0
+        ya = dyh[t++]
     } else {
-    if(t >4){
+    if(t > 3){
         t=0
      }
       ya = dyh[t++]
     }
 
-    console.log("不押" + ya + ", " + (times*1) + "倍")
+    console.log("押" + ya + ", " + (times*3) + "倍")
  
- for(var i = 0; i<10; i++) {
-  if(ya.indexOf(i+"") == -1) {
-   $('.balls .item')[i].click();
-    }
+  $('.item[data-command=' + clas[ya] + ']')[4].click()
 
- }
- 
- 
- $('.multiple input')[0].value = (times*1);
+ $('.multiple input')[0].value = (times*3);
  $('[data-command=quick-bet]')[0].click()
 
 
