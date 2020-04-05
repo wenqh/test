@@ -41,8 +41,8 @@ if(lastBet == null || kj[0] == ya || kj[1] == ya) {
 
 
 if(times === 1) {
-        t = 0
-        ya = dyh[t++]
+       
+       
     } else {
     if(t > 3){
         t=0
