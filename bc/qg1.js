@@ -4,10 +4,9 @@ if("92xf319eb56x89633f702b9fbng8" !== pwd) {
 throw "error password"
 }
 
-
 var lastBet = null;
 var times = 1;
-var dyh = ['大','单','小','双'];
+var dyh = ['小','大','双','单','双'];
 var clas = {'小':"small",'单':"single",'双':'double','大':'big'};
 
 var t = 0;
@@ -42,9 +41,9 @@ if(lastBet == null || kj[0] == ya || kj[1] == ya) {
 
 if(times === 1) {
         
-    
+     
     } else {
-    if(t > 3){
+    if(t >= 5){
         t=0
      }
       ya = dyh[t++]
@@ -63,5 +62,3 @@ lastBet = lastIssue
 }
 
 setInterval(main, 1000);
-
- 
