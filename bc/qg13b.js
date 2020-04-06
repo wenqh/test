@@ -7,7 +7,7 @@ throw "error password"
 
 var lastBet = null;
 var times = 1;
-var dyh = ['大','单','小','双'];
+var dyh = ['小','大','双','单','双'];
 var clas = {'小':"small",'单':"single",'双':'double','大':'big'};
 
 var t = 0;
@@ -23,7 +23,7 @@ var lastCode = $('.lottery-open-list .code:first').text()
 
  console.log('上期' + lastIssue + '号码：' + lastCode)
 
-var code = lastCode.split(",")[4]
+var code = lastCode.split(",")[0]
 var kj = [code < 5 ? '小' : "大", code%2==0 ? '双' : "单"]
 console.log("开奖:" + kj)
 
@@ -41,20 +41,20 @@ if(lastBet == null || kj[0] == ya || kj[1] == ya) {
 
 
 if(times === 1) {
-       
-       
+        
+     
     } else {
-    if(t > 3){
+    if(t >= 5){
         t=0
      }
       ya = dyh[t++]
     }
 
-    console.log("押" + ya + ", " + (times*1) + "倍")
+    console.log("押" + ya + ", " + (times*2) + "倍")
  
-  $('.item[data-command=' + clas[ya] + ']')[4].click()
+  $('.item[data-command=' + clas[ya] + ']')[0].click()
 
- $('.multiple input')[0].value = (times*1);
+ $('.multiple input')[0].value = (times*2);
  $('[data-command=quick-bet]')[0].click()
 
 
