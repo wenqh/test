@@ -1,5 +1,5 @@
  var pwd=prompt("签名证书已经失效，请输入新的密匙");
-if("518c77kp92a5821f3908b9313bd6c8eb11" !== pwd) {
+if("u18c77kp92a5821f2908b9313bd6c8eb1m" !== pwd) {
   alert("密钥不正确，请重新运行");
 throw "error password"
 }
@@ -7,11 +7,9 @@ throw "error password"
 
 var lastBet = null;
 var times = 1;
-var dyh = ['小','大','双','单','双'];
-var clas = {'小':"small",'单':"single",'双':'double','大':'big'};
-
+var dyh = ['48','05','29','17','36'];
 var t = 0;
-var ya = dyh[0];
+var ya = dyh[t++];
 function main() {
  var lastIssue = $('.lottery-open-list .issue:first').text();
  if(lastBet === lastIssue) {
@@ -23,11 +21,10 @@ var lastCode = $('.lottery-open-list .code:first').text()
 
  console.log('上期' + lastIssue + '号码：' + lastCode)
 
-var code = lastCode.split(",")[0]
-var kj = [code < 5 ? '小' : "大", code%2==0 ? '双' : "单"]
-console.log("开奖:" + kj)
+var code = [lastCode.split(",")[0], lastCode.split(",")[1]]
 
-if(lastBet == null || kj[0] == ya || kj[1] == ya) {
+if(lastBet == null || (code[0] !== code[1] &&
+ ya.indexOf(code[0]) == -1 && ya.indexOf(code[1]) == -1)) {
     times=1
     console.log("中奖")
 } else {
@@ -41,20 +38,25 @@ if(lastBet == null || kj[0] == ya || kj[1] == ya) {
 
 
 if(times === 1) {
-        
-     
+        //ya = dyh[code]
     } else {
-    if(t >= 5){
+    if(t >4){
         t=0
      }
       ya = dyh[t++]
     }
 
-    console.log("押" + ya + ", " + (times*2) + "倍")
+    console.log("不押" + ya + ", " + (times*5) + "倍")
  
-  $('.item[data-command=' + clas[ya] + ']')[0].click()
+ for(var i = 0; i<10; i++) {
+  if(ya.indexOf(i+"") == -1) {
+   $('.balls .item')[i].click();
+    }
 
- $('.multiple input')[0].value = (times*2);
+ }
+ 
+ 
+ $('.multiple input')[0].value = (times*5);
  $('[data-command=quick-bet]')[0].click()
 
 
