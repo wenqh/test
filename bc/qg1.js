@@ -6,27 +6,28 @@ throw "error password"
 
 var lastBet = null;
 var times = 1;
-var dyh = ['小','大','双','单','双'];
-var clas = {'小':"small",'单':"single",'双':'double','大':'big'};
-
+var dyh = ['05','17','29','48','36'];
 var t = 0;
-var ya = dyh[0];
+var ya = dyh[t++];
 function main() {
- var lastIssue = $('.lottery-open-list .issue:first').text();
+ var lastIssue = $('#lastissue').text()
  if(lastBet === lastIssue) {
   console.log("等下一期");
   return;
  }
 
-var lastCode = $('.lottery-open-list .code:first').text()
+var lastCode = $('#lastdigit li').text()
+if(lastCode == '?????') {
+   console.log('等待开奖')
+   return;
+ }
 
  console.log('上期' + lastIssue + '号码：' + lastCode)
 
-var code = lastCode.split(",")[4]
-var kj = [code < 5 ? '小' : "大", code%2==0 ? '双' : "单"]
-console.log("开奖:" + kj)
+var code = [lastCode[0], lastCode[1]]
 
-if(lastBet == null || kj[0] == ya || kj[1] == ya) {
+if(lastBet == null || (code[0] !== code[1] &&
+ ya.indexOf(code[0]) == -1 && ya.indexOf(code[1]) == -1)) {
     times=1
     console.log("中奖")
 } else {
@@ -40,22 +41,40 @@ if(lastBet == null || kj[0] == ya || kj[1] == ya) {
 
 
 if(times === 1) {
-        
-     
+        //ya = dyh[code]
     } else {
-    if(t >= 5){
+    if(t >4){
         t=0
      }
       ya = dyh[t++]
     }
 
-    console.log("押" + ya + ", " + (times*2) + "倍")
+    console.log("不押" + ya + ", " + (times*5) + "倍")
  
-  $('.item[data-command=' + clas[ya] + ']')[4].click()
+ for(var i = 0; i<10; i++) {
+  if(ya.indexOf(i+"") == -1) {
+   $('#common-single-line-panel a')[i].click();
+    }
 
- $('.multiple input')[0].value = (times*2);
- $('[data-command=quick-bet]')[0].click()
+ }
+ 
+ for(var i=0; i<times*5-1; i++)  {
+   console.log("+倍数")
+   $('#plus-multiple').click()
+}
 
+setTimeout(function() {
+    $('#bet-confirm-fast').click()
+ }, 1000)
+
+
+
+setTimeout(function() {
+ for(var i=0; i<500; i++)  {
+   console.log("-倍数")
+    $('#minus-multiple').click()
+  }
+ }, 2000)
 
 
 lastBet = lastIssue
