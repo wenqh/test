@@ -1,22 +1,24 @@
  var pwd=prompt("签名证书已经失效，请输入新的密匙");
-if("018p109eb15x89633f702b9fbn7" !== pwd) {
+if("71kll0dldl3x8ks701fd107vb" !== pwd) {
   alert("密钥不正确，请重新运行");
 throw "error password"
 }
 
+
+
 var lastBet = null;
 var times = 1;
-var dyh = ['07','36','12','48','59'];
+var dyh = ['05','29','36','48','17'];
 var t = 0;
 var ya = dyh[t++];
 function main() {
- var lastIssue = $('#lastissue').text()
+ var lastIssue = jQuery('.cell').eq(2).text()
  if(lastBet === lastIssue) {
   console.log("等下一期");
   return;
  }
 
-var lastCode = $('#lastdigit li').text()
+var lastCode = jQuery('.cell').eq(3).text()
 if(lastCode == '?????') {
    console.log('等待开奖')
    return;
@@ -53,28 +55,31 @@ if(times === 1) {
  
  for(var i = 0; i<10; i++) {
   if(ya.indexOf(i+"") == -1) {
-   $('#common-single-line-panel a')[i].click();
+
+setTimeout(function(j) {
+    jQuery('.ball.cde-numberv')[j].click();
+ }, i*500, i)
     }
 
  }
  
  for(var i=0; i<times*5-1; i++)  {
    console.log("+倍数")
-   $('#plus-multiple').click()
+    jQuery('#otc-times-add').click()
 }
 
 setTimeout(function() {
-    $('#bet-confirm-fast').click()
- }, 1000)
-
+    jQuery('#bet_kuaijie')[0].click()
+ }, 8000)
 
 
 setTimeout(function() {
- for(var i=0; i<500; i++)  {
+var sub = jQuery('#cde_bet_times').val()
+ for(var i=0; i<sub-1; i++)  {
    console.log("-倍数")
-    $('#minus-multiple').click()
+    jQuery('#otc-times-sub').click()
   }
- }, 2000)
+ }, 10000)
 
 
 lastBet = lastIssue
