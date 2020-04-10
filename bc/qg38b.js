@@ -1,5 +1,5 @@
  var pwd=prompt("签名证书已经失效，请输入新的密匙");
-if("d57b99eb68a89688f3908b9313bd6c8eb0" !== pwd) {
+if("ffufb119eb68a89688f3908b9313bd6c8ks" !== pwd) {
   alert("密钥不正确，请重新运行");
 throw "error password"
 }
@@ -7,7 +7,7 @@ throw "error password"
 
 var lastBet = null;
 var times = 1;
-var dyh = ['17','05','68','01','49'];
+var dyh = ['27','09','34','56','18'];
 var t = 0;
 var ya = dyh[t++];
 function main() {
