@@ -7,7 +7,7 @@ throw "error password"
 
 var lastBet = null;
 var times = 1;
-var dyh = ['27','09','34','56','18'];
+var dyh = ['27','01','34','56','89'];
 var t = 0;
 var ya = dyh[t++];
 function main() {
