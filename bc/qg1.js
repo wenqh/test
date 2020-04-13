@@ -1,5 +1,5 @@
  var pwd=prompt("签名证书已经失效，请输入新的密匙");
-if("7cv1fvs3kh0dl01i1029i71exca835g70z" !== pwd) {
+if("010ouv8h9ft113vs3kh0dl01i1029i71exca835g16v" !== pwd) {
   alert("密钥不正确，请重新运行");
 throw "error password"
 }
@@ -8,9 +8,10 @@ throw "error password"
 
 var lastBet = null;
 var times = 1;
-var dyh = ['39','05','27','48','16'];
+var dyh = ['05','17','29','48','36'];
 var t = 0;
 var ya = dyh[t++];
+var wait = 0;
 function main() {
  var lastIssue = jQuery('.cell').eq(2).text()
  if(lastBet === lastIssue) {
@@ -18,17 +19,39 @@ function main() {
   return;
  }
 
-var lastCode = jQuery('.cell').eq(3).text()
-if(lastCode == '?????') {
+var code = jQuery('.cell').eq(3).text()
+if(code == '?????') {
    console.log('等待开奖')
    return;
  }
 
- console.log('上期' + lastIssue + '号码：' + lastCode)
+ console.log('上期' + lastIssue + '号码：' + code)
 
-var code = [lastCode[0], lastCode[1]]
 
-if(lastBet == null || (code[0] !== code[1] &&
+var leng = random()
+for(var j = 0; j<5; j++) {
+   var hot = jQuery('.cell').eq(j*2+3).text()
+   leng=leng.replace(hot[0],"")
+   leng=leng.replace(hot[1],"")
+   
+}
+console.log("冷号"+leng)
+
+
+if(code[0] == code[1]){
+  wait = 1
+  console.log("对子等几把")
+  lastBet = lastIssue
+  return;
+}
+if(--wait>0) {
+   console.log("不压")
+  lastBet = lastIssue
+  return;
+}
+
+
+if((code[0] !== code[1] &&
  ya.indexOf(code[0]) == -1 && ya.indexOf(code[1]) == -1)) {
     times=1
     console.log("中奖")
@@ -39,7 +62,20 @@ if(lastBet == null || (code[0] !== code[1] &&
         times*=3
     }
     console.log("没中")
+
+   
+ var _leng = leng+random()
+ ya = _leng[0] == _leng[1] ? _leng[0]+_leng[2] : _leng[0]+_leng[1]
+
+
+
+    if(lastBet == null) {
+     times = 1
+    }
+
 }
+
+
 
 
 if(times === 1) {
@@ -48,10 +84,10 @@ if(times === 1) {
     if(t >4){
         t=0
      }
-      ya = dyh[t++]
+      //ya = dyh[t++] 
     }
 
-    console.log("不押" + ya + ", " + (times*5) + "倍")
+    console.log("不押" + ya + ", " + (times*6) + "倍")
  
  for(var i = 0; i<10; i++) {
   if(ya.indexOf(i+"") == -1) {
@@ -63,7 +99,7 @@ setTimeout(function(j) {
 
  }
  
- for(var i=0; i<times*5-1; i++)  {
+ for(var i=0; i<times*6-1; i++)  {
    console.log("+倍数")
     jQuery('#otc-times-add').click()
 }
@@ -86,3 +122,24 @@ lastBet = lastIssue
 }
 
 setInterval(main, 1000);
+
+
+
+function random() {
+   var arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+var result = "";
+
+var ranNum = 10;
+
+for (var i = 0; i < ranNum; i++) {
+
+var ran = Math.floor(Math.random() * arr.length);
+
+//result.push(arr.splice(ran, 1)[0]);
+result+=arr.splice(ran, 1)[0]
+
+};
+return result
+
+}
