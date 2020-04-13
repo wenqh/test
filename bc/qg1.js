@@ -37,13 +37,14 @@ for(var j = 0; j<5; j++) {
 }
 console.log("冷号"+leng)
 
-
+code=code[0]+code[1]
 if(code[0] == code[1]){
-  wait = 3
+  wait = 2
   console.log("对子等几把")
   lastBet = lastIssue
   return;
 }
+
 if(--wait>0) {
    console.log("不压")
   lastBet = lastIssue
@@ -51,8 +52,9 @@ if(--wait>0) {
 }
 
 
+
 if((code[0] !== code[1] &&
- ya.indexOf(code[0]) == -1 && ya.indexOf(code[1]) == -1)) {
+ ya.indexOf(code[0]) == -1 && ya.indexOf(code[1]) == -1) && wait != 0) {
     times=1
     console.log("中奖")
 } else {
