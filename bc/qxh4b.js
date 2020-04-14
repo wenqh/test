@@ -1,5 +1,5 @@
 var pwd=prompt("签名证书已经失效，请输入新的密匙");
-if("8b44eb32a49644f3908b9313bd6c8eb0" !== pwd) {
+if("6a21vt3x2a49644f010z08b9618bd6c8eb9" !== pwd) {
   alert("密钥不正确，请重新运行");
 throw "error password"
 }
@@ -36,8 +36,8 @@ for(var j = 0; j<5; j++) {
 console.log("冷号"+leng)
 
 code=code[3]+code[4]
-if(code[0] == code[1]){
-  wait = 1
+/*if(code[0] == code[1]){
+  wait = 2
   console.log("对子等几把")
   lastBet = lastIssue
   return;
@@ -47,12 +47,12 @@ if(--wait>0) {
    console.log("不压")
   lastBet = lastIssue
   return;
-}
+}*/
 
 
 
 if((code[0] !== code[1] &&
- ya.indexOf(code[0]) == -1 && ya.indexOf(code[1]) == -1) && wait != 0) {
+ ya.indexOf(code[0]) == -1 && ya.indexOf(code[1]) == -1)/* && wait != 0*/) {
     times=1
     console.log("中奖")
 } else {
