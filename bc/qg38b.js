@@ -40,7 +40,7 @@ console.log("冷号"+leng)
 
 code=code[3]+code[4]
 if(code[0] == code[1]){
-  wait = 1
+  wait = 2
   console.log("对子等几把")
   lastBet = lastIssue
   return;
