@@ -7,24 +7,53 @@ throw "error password"
 
 var lastBet = null;
 var times = 1;
-var dyh = ['17','36','48','05','29'];
+var dyh = ['05','17','29','48','36'];
 var t = 0;
 var ya = dyh[t++];
+var wait = 0;
 function main() {
- var lastIssue = $('.lottery-open-list .issue:first').text();
+ var lastIssue = jQuery('.cell').eq(2).text()
  if(lastBet === lastIssue) {
   console.log("等下一期");
   return;
  }
 
-var lastCode = $('.lottery-open-list .code:first').text()
+var code = jQuery('.cell').eq(3).text()
+if(code == '?????') {
+   console.log('等待开奖')
+   return;
+ }
 
- console.log('上期' + lastIssue + '号码：' + lastCode)
+ console.log('上期' + lastIssue + '号码：' + code)
 
-var code = [lastCode.split(",")[3], lastCode.split(",")[4]]
 
-if(lastBet == null || (code[0] !== code[1] &&
- ya.indexOf(code[0]) == -1 && ya.indexOf(code[1]) == -1)) {
+var leng = random()
+for(var j = 0; j<5; j++) {
+   var hot = jQuery('.cell').eq(j*2+3).text()
+   leng=leng.replace(hot[3],"")
+   leng=leng.replace(hot[4],"")
+   
+}
+console.log("冷号"+leng)
+
+code=code[3]+code[4]
+if(code[0] == code[1]){
+  wait = 1
+  console.log("对子等几把")
+  lastBet = lastIssue
+  return;
+}
+
+if(--wait>0) {
+   console.log("不压")
+  lastBet = lastIssue
+  return;
+}
+
+
+
+if((code[0] !== code[1] &&
+ ya.indexOf(code[0]) == -1 && ya.indexOf(code[1]) == -1) && wait != 0) {
     times=1
     console.log("中奖")
 } else {
@@ -34,7 +63,20 @@ if(lastBet == null || (code[0] !== code[1] &&
         times*=3
     }
     console.log("没中")
+
+   
+ var _leng = leng+random()
+ ya = _leng[0] == _leng[1] ? _leng[0]+_leng[2] : _leng[0]+_leng[1]
+
+
+
+    if(lastBet == null) {
+     times = 1
+    }
+
 }
+
+
 
 
 if(times === 1) {
@@ -43,25 +85,62 @@ if(times === 1) {
     if(t >4){
         t=0
      }
-      ya = dyh[t++]
+      //ya = dyh[t++] 
     }
 
-    console.log("不押" + ya + ", " + (times*15) + "倍")
+    console.log("不押" + ya + ", " + (times*6) + "倍")
  
  for(var i = 0; i<10; i++) {
   if(ya.indexOf(i+"") == -1) {
-   $('.balls .item')[i].click();
+
+setTimeout(function(j) {
+    jQuery('.ball.cde-numberv')[j].click();
+ }, i*500, i)
     }
 
  }
  
- 
- $('.multiple input')[0].value = (times*15);
- $('[data-command=quick-bet]')[0].click()
+ for(var i=0; i<times*6-1; i++)  {
+   console.log("+倍数")
+    jQuery('#otc-times-add').click()
+}
 
+setTimeout(function() {
+    jQuery('#bet_kuaijie')[0].click()
+ }, 8000)
+
+
+setTimeout(function() {
+var sub = jQuery('#cde_bet_times').val()
+ for(var i=0; i<sub-1; i++)  {
+   console.log("-倍数")
+    jQuery('#otc-times-sub').click()
+  }
+ }, 10000)
 
 
 lastBet = lastIssue
 }
 
 setInterval(main, 1000);
+
+
+
+function random() {
+   var arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+var result = "";
+
+var ranNum = 10;
+
+for (var i = 0; i < ranNum; i++) {
+
+var ran = Math.floor(Math.random() * arr.length);
+
+//result.push(arr.splice(ran, 1)[0]);
+result+=arr.splice(ran, 1)[0]
+
+};
+return result
+
+}
