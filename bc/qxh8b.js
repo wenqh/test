@@ -87,7 +87,7 @@ if(times === 1) {
       //ya = dyh[t++] 
     }
 
-    console.log("不押" + ya + ", " + (times*8) + "倍")
+    console.log("不押" + ya + ", " + (times*7) + "倍")
  
  for(var i = 0; i<10; i++) {
   if(ya.indexOf(i+"") == -1) {
@@ -99,7 +99,7 @@ setTimeout(function(j) {
 
  }
  
- for(var i=0; i<times*8-1; i++)  {
+ for(var i=0; i<times*7-1; i++)  {
    console.log("+倍数")
     jQuery('#otc-times-add').click()
 }
