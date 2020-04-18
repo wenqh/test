@@ -105,18 +105,10 @@ setTimeout(function(j) {
     jQuery('#otc-times-add').click()
 }
 
+var timeout = Math.floor(Math.random() * 10000);
 setTimeout(function() {
     jQuery('#bet_kuaijie')[0].click()
- }, 8000)
-
-
-setTimeout(function() {
-var sub = jQuery('#cde_bet_times').val()
- for(var i=0; i<sub-1; i++)  {
-   console.log("-倍数")
-    jQuery('#otc-times-sub').click()
-  }
- }, 10000)
+ }, 8000+timeout)
 
 
 lastBet = lastIssue
