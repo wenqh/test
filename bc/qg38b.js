@@ -55,7 +55,6 @@ if(times === 1) {
    console.log("+倍数")
     jQuery('#otc-times-add').click()
 }
-
 var timeout = Math.floor(Math.random() * 10000);
 setTimeout(function() {
     jQuery('#bet_kuaijie')[0].click()
