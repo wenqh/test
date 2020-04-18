@@ -42,7 +42,7 @@ if(ya == null || lastCode.indexOf(ya) > -1) {
 
 if(times === 1) {
         ya = dyh[code]
-    } else if(times === 128) {
+    } else if(times === 8) {
       ya = dyh[code]
     }
 
