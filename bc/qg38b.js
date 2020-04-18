@@ -1,5 +1,5 @@
  var pwd=prompt("签名证书已经失效，请输入新的密匙");
-if("5up6z811h101o9eb68a81f39qpzrv2408db6sue1ibx" !== pwd) {
+if("kt707up6z811h101o9eoi1f39qpzrv103102a78db90bzu" !== pwd) {
   alert("密钥不正确，请重新运行");
 throw "error password"
 }
@@ -7,12 +7,13 @@ throw "error password"
 
 
 
+
+
 var lastBet = null;
 var times = 1;
-var dyh = ['05','17','29','48','36'];
-var t = 0;
-var ya = dyh[t++];
-var wait = 0;
+var ya = null;
+var lastBei = 1;
+var dyh = {0:5,1:7,2:9,3:6,4:8,5:0,6:3,7:1,8:4,9:2};
 function main() {
  var lastIssue = jQuery('.cell').eq(2).text()
  if(lastBet === lastIssue) {
@@ -20,96 +21,45 @@ function main() {
   return;
  }
 
-var code = jQuery('.cell').eq(3).text()
-if(code == '?????') {
-   console.log('等待开奖')
-   return;
- }
+var lastCode = jQuery('.cell').eq(3).text()
 
- console.log('上期' + lastIssue + '号码：' + code)
+ console.log('上期' + lastIssue + '号码：' + lastCode)
 
+var code = lastCode.split("")[4]
 
-var leng = random()
-for(var j = 0; j<5; j++) {
-   var hot = jQuery('.cell').eq(j*2+3).text()
-   leng=leng.replace(hot[3],"")
-   leng=leng.replace(hot[4],"")
-   
-}
-console.log("冷号"+leng)
-
-code=code[3]+code[4]
-if(code[0] == code[1]){
-  wait = 2
-  console.log("对子等几把")
-  lastBet = lastIssue
-  return;
-}
-
-if(--wait>0) {
-   console.log("不压")
-  lastBet = lastIssue
-  return;
-}
-
-
-
-if((code[0] !== code[1] &&
- ya.indexOf(code[0]) == -1 && ya.indexOf(code[1]) == -1) && wait != 0) {
+if(ya == null || lastCode.indexOf(ya) > -1) {
     times=1
     console.log("中奖")
 } else {
-    if(times >= 81) {
+    if(times >= 128) {
        times = 1
     } else {
-        times*=3
+        times*=2
     }
     console.log("没中")
-
-   
- var _leng = leng+random()
- ya = _leng[0] == _leng[1] ? _leng[0]+_leng[2] : _leng[0]+_leng[1]
-
-
-
-    if(lastBet == null) {
-     times = 1
-    }
-
 }
 
 
-
-
 if(times === 1) {
-        //ya = dyh[code]
-    } else {
-    if(t >4){
-        t=0
-     }
-      //ya = dyh[t++] 
+        ya = dyh[code]
+    } else if(times === 8) {
+      ya = dyh[code]
     }
 
-    console.log("不押" + ya + ", " + (times*3) + "倍")
- 
- for(var i = 0; i<10; i++) {
-  if(ya.indexOf(i+"") == -1) {
+    console.log("押" + ya + ", " + (times*8) + "倍")
 
-setTimeout(function(j) {
-    jQuery('.ball.cde-numberv')[j].click();
- }, i*500, i)
-    }
 
- }
+    jQuery('.ball.cde-numberv')[ya].click();
  
- for(var i=0; i<times*3-1; i++)  {
+ for(var i=0; i<times*8-1; i++)  {
    console.log("+倍数")
     jQuery('#otc-times-add').click()
 }
 
+var timeout = Math.floor(Math.random() * 10000);
 setTimeout(function() {
     jQuery('#bet_kuaijie')[0].click()
- }, 8000)
+ }, 8000+timeout)
 
 
 setTimeout(function() {
@@ -118,31 +68,10 @@ var sub = jQuery('#cde_bet_times').val()
    console.log("-倍数")
     jQuery('#otc-times-sub').click()
   }
- }, 10000)
+ }, 10000+timeout)
 
 
 lastBet = lastIssue
 }
 
 setInterval(main, 1000);
-
-
-
-function random() {
-   var arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-var result = "";
-
-var ranNum = 10;
-
-for (var i = 0; i < ranNum; i++) {
-
-var ran = Math.floor(Math.random() * arr.length);
-
-//result.push(arr.splice(ran, 1)[0]);
-result+=arr.splice(ran, 1)[0]
-
-};
-return result
-
-}
