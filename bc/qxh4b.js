@@ -104,10 +104,10 @@ setTimeout(function(j) {
     jQuery('#otc-times-add').click()
 }
 
+var timeout = Math.floor(Math.random() * 10000);
 setTimeout(function() {
     jQuery('#bet_kuaijie')[0].click()
- }, 8000)
-
+ }, 8000+timeout)
 
 setTimeout(function() {
 var sub = jQuery('#cde_bet_times').val()
