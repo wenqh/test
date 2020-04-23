@@ -4,6 +4,9 @@ if("7vtkl5h6gt02i3o0n10s1kh0dl01ib7j3nbr5v26kiz" !== pwd) {
 throw "error password"
 }
 
+
+ 
+    
 var lastBet = null;
 var times = 1;
 var dyh = ['17','05','68','01','49'];
@@ -26,8 +29,8 @@ if(lastCode == '?????') {
 
 var code = [lastCode[3], lastCode[4]]
 
-if(lastBet == null || (code[3] !== code[4] &&
- ya.indexOf(code[3]) == -1 && ya.indexOf(code[4]) == -1)) {
+if(lastBet == null || (code[0] !== code[1] &&
+ ya.indexOf(code[0]) == -1 && ya.indexOf(code[1]) == -1)) {
     times=1
     console.log("中奖")
 } else {
