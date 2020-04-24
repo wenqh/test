@@ -43,7 +43,7 @@ function main() {
 	
     console.log("热号排序" + rehao)
 
-    code = code[3] + code[4]
+    //code = code[3] + code[4]
     /*if(code[0] == code[1]){
   wait = 2
   console.log("对子等几把")
@@ -57,14 +57,14 @@ if(--wait>0) {
   return;
 }*/
 
-    if (code.indexOf(ya)/* && wait != 0*/) {
+    if (code.indexOf(ya) != -1/* && wait != 0*/) {
         times = 1
         console.log("中奖")
     } else {
-        if (times >= 81) {
+        if (times >= 128) {
             times = 1
         } else {
-            times *= 3
+            times *= 2
         }
         console.log("没中")
 
@@ -83,15 +83,13 @@ if(--wait>0) {
         //ya = dyh[t++] 
     }
 
-    console.log("押" + ya + ", " + (times * 5) + "倍")
-
-    jQuery('.cde-tool[name=clean]').click();
+    console.log("押" + ya + ", " + (times * 8) + "倍")
 
     jQuery('.ball.cde-numberv')[ya].click();
             
        
 
-    for (var i = 0; i < times * 5 - 1; i++) {
+    for (var i = 0; i < times * 8 - 1; i++) {
         console.log("+倍数")
         jQuery('#otc-times-add').click()
     }
@@ -105,9 +103,8 @@ if(--wait>0) {
         for (var i = 0; i < sub - 1; i++) {
             console.log("-倍数")
             jQuery('#otc-times-sub').click()
-  }
+        }
     }, 2000)
-	
 	timeout = Math.floor(Math.random() * 10);
 
     lastBet = lastIssue
@@ -130,6 +127,6 @@ function random() {
         result += arr.splice(ran, 1)[0]
 
     }
-    ;return result
+    return result
 
 }
