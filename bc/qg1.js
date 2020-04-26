@@ -5,9 +5,7 @@ throw "error password"
 }
 
 
- 
-    
-var dyh = {0:5,1:7,2:9,3:6,4:8,5:0,6:3,7:1,8:4,9:2};
+ var dyh = {0:5,1:7,2:9,3:6,4:8,5:0,6:3,7:1,8:4,9:2};
 var lastBet = null;
 var times = 1;
 var ya = null;
