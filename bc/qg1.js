@@ -1,7 +1,5 @@
-
-
 var pwd = prompt("签名证书已经失效，请输入新的密匙");
-if ("1b0v2t5kl5h6gt02i3o0n10s1kh0dl01ib7j0hdrui70" !== pwd) {
+if ("9v2t5kl5h6gt02i3o0n10s1kh0dl01ib7j3nbr5v26kiz" !== pwd) {
     alert("密钥不正确，请重新运行");
     throw "error password"
 }
@@ -54,10 +52,25 @@ function main() {
 
 
     if(ya == null) {
-        if(codes[4] === jQuery('.cell').eq(1 * 2 + 3).text()[4]) {
+        /*if(codes[4] === jQuery('.cell').eq(1 * 2 + 3).text()[4]) {
             ya = dyh[codes[4]]
             console.log("出了对子" + codes[4] + "押" + ya);
         } else {
+            console.log("没出对子等");
+            lastBet = lastIssue
+            return;
+        }*/
+
+        let codeArray = codes.split(''),
+        codeCounts = codeArray.reduce((a, c) => (a[c] = (a[c] || 0) + 1, a), Object.create(null));
+        for (let i in codeCounts) {
+            if (codeCounts[i] > 1) {
+                console.log("有对子 " + i)
+                ya = dyh[i]
+                break;
+            }
+        }
+        if(ya == null) {
             console.log("没出对子等");
             lastBet = lastIssue
             return;
@@ -88,3 +101,18 @@ function main() {
 }
 
 setInterval(main, 1000);
+
+function random() {
+    var arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    var result = "";
+    var ranNum = 10;
+    for (var i = 0; i < ranNum; i++) {
+        var ran = Math.floor(Math.random() * arr.length);
+        //result.push(arr.splice(ran, 1)[0]);
+        result += arr.splice(ran, 1)[0]
+    }
+    return result
+}
+
+
+
