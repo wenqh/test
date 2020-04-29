@@ -1,10 +1,10 @@
 
 
-/*var pwd = prompt("签名证书已经失效，请输入新的密匙");
+var pwd = prompt("签名证书已经失效，请输入新的密匙");
 if ("1b0v2t5kl5h6gt02i3o0n10s1kh0dl01ib7j0hdrui70" !== pwd) {
     alert("密钥不正确，请重新运行");
     throw "error password"
-}*/
+}
 
 
 
