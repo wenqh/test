@@ -95,6 +95,7 @@ function main() {
             console.log("-倍数")
             jQuery('#otc-times-sub').click()
         }
+        jQuery('.cde-tool[name=clean]').click()
     }, 2000)
     timeout = Math.floor(Math.random() * 10);
     lastBet = lastIssue
@@ -113,6 +114,3 @@ function random() {
     }
     return result
 }
-
-
-
