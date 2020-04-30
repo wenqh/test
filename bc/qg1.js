@@ -1,4 +1,6 @@
-var pwd=prompt("签名证书已经失效，请输入新的密匙"); 
+ 
+ 
+ var pwd=prompt("签名证书已经失效，请输入新的密匙"); 
  if("9v2t5kl5h6gt02i3o0n10s1kh0dl01ib7j3nbr5v26kiz" !== pwd) { 
  alert("密钥不正确，请重新运行"); 
  throw "error password" 
@@ -46,7 +48,7 @@ var pwd=prompt("签名证书已经失效，请输入新的密匙");
 
 var hots5 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] 
  for (var j = 0; j < 5; j++) { 
- var hots5 = jQuery('.cell').eq(j * 2 + 3).text() 
+ var hot5 = jQuery('.cell').eq(j * 2 + 3).text() 
  for (var k = 0; k < 5; k++) { 
  hots5[hot5[k]] += 1 
  } 
