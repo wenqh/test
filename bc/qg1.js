@@ -1,5 +1,4 @@
- 
- 
+
  var pwd=prompt("签名证书已经失效，请输入新的密匙"); 
  if("9v2t5kl5h6gt02i3o0n10s1kh0dl01ib7j3nbr5v26kiz" !== pwd) { 
  alert("密钥不正确，请重新运行"); 
@@ -129,6 +128,7 @@ var hots5 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
  console.log("-倍数") 
  jQuery('#otc-times-sub').click() 
  } 
+ jQuery('.cde-tool[name=clean]').click();
  }, 2000) 
    timeout = Math.floor(Math.random() * 10); 
    lastBet = lastIssue 
