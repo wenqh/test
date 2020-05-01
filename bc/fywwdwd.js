@@ -113,7 +113,7 @@ var hots5 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
  } 
  //ya = dyh[t++]  
  } 
-   console.log("押" + ya + ", " + (times * 8) + "倍") 
+   console.log("押" + ya + ", " + (times * 3) + "倍") 
       for (var i = 0; i < 5; i++) {
         setTimeout(function (j) {
             jQuery('.num-list.num-list-rac').eq(j).find('span')[ya].click();
@@ -121,7 +121,7 @@ var hots5 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
     }
 
-   for (var i = 0; i < times * 8 - 1; i++) { 
+   for (var i = 0; i < times * 3 - 1; i++) { 
  console.log("+倍数") 
  jQuery('#otc-times-add').click() 
  } 
