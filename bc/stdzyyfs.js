@@ -94,9 +94,9 @@ console.log("没中换号")*/
 
 
 
-    console.log("押" + ya + ", " + (times * 1) + "倍");
+    console.log("押" + ya + ", " + (times * 8) + "倍");
     jQuery('.ball.cde-numberv')[ya].click();
-    for (var i = 0; i < times * 1 - 1; i++) {
+    for (var i = 0; i < times * 8 - 1; i++) {
         console.log("+倍数")
         jQuery('#otc-times-add').click()
     }
