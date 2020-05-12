@@ -10,7 +10,7 @@ var times = 1;
 var ya = null
  var jiaoti = true; 
  var lr = 0; 
- var lengre = "冷冷热热热";
+ var lengre = "热冷热热冷";
 function main() {
     var lastIssue = jQuery('.cell').eq(2).text();
     if (lastBet === lastIssue) {
