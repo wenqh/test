@@ -1,4 +1,19 @@
+
+
+
+
+
+
 //循环虎龙
+
+
+var pwd=prompt("签名证书已经失效，请输入新的密匙"); 
+ if("8v267u678iuhyi6rf670dl01ib7j3nbr9io6kiz" !== pwd) { 
+ alert("密钥不正确，请重新运行"); 
+ //throw "error password" 
+ } 
+
+
 var lastBet = null;
 var times = 1;
 var t = 0;
