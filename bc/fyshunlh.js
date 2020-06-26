@@ -27,6 +27,7 @@ var beth = ['虎','虎','龙','龙']
 var bet = null;
 var methods = [0, 1, 2, 3, 4, 5, 6,7,8,9]//玩法位置，0代表第一个
 var method = 0;
+shuffle(methods);
 jQuery('.lottery-box.lottery-ident-qiqutxffssc').prepend('<div style="border: 2px solid green; font-size: 1.8em">倍数：<input id="_bei" type="number" value="1"></innput>' +
     '<span id="_gua" data-v="0" style="color: red"></span></div>')
 function main() {
@@ -139,4 +140,24 @@ function setKeywordText(text) {
 }
 function clear(t) {
     return t.split(' ').join('').split("\n").join('');
+}
+
+
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
 }
