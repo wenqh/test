@@ -69,7 +69,7 @@ function main() {
         }
 
     } else {
-        if (times >= 128) {
+        if (times >= 32) {
             times = 1; t=0;
             jQuery('#_gua').attr('data-v', parseInt(jQuery('#_gua').attr('data-v')) + 1)
             jQuery('#_gua').text(jQuery('#_gua').attr('data-v') + ' 轮车')
@@ -98,7 +98,7 @@ let i1=plays[clear(m.text())[0]];
 let i2=plays[clear(m.text())[1]];
 
 for(let k = 0; k<10; k++){
-     let _code = clear(jQuery('.lishi-list-box').eq(k+1).text());
+     let _code = clear(jQuery('.lishi-list-box').eq(k).text());
 
      if(_code[i1] !== _code[i2]){
           ya = _code[i1] > _code[i2] ? '龙' : '虎';
