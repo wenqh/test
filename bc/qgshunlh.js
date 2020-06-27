@@ -14,7 +14,7 @@ var ting = false;
 var jihua = null;
 var plays = {万:0, 千:1, 百:2, 十:3, 个:4}
 var bet = '龙';
-var methods = ['wq', 'wb', 'ws', 'wg','qb','qs','qg','bs','bg','sg']
+var methods = ['wq', 'qb', 'ws', 'wg','qb','qs','qg','bs','bg','wg']
 var method = 0;
 $('.main-box').prepend('<div style="float: right; border: 2px solid green; font-size: 1.8em">倍数：<input id="_bei" type="number" value="1"></innput>' +
     '<span id="_gua" data-v="0" style="color: red"></span></div>')
