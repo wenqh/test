@@ -25,7 +25,7 @@ var plays = {万:0, 千:1, 百:2, 十:3, 个:4}
 var betl = ['龙','龙','虎','虎']
 var beth = ['虎','虎','龙','龙']
 var bet = null;
-var methods = [7, 3, 3, 0, 5, 2, 4,1,8]//玩法位置，0代表第一个
+var methods = [3, 7, 3, 0, 5, 2, 4,1,8]//玩法位置，0代表第一个
 var method = 0;
 shuffle(methods);
 jQuery('.lottery-box.lottery-ident-qiqutxffssc').prepend('<div style="border: 2px solid green; font-size: 1.8em">倍数：<input id="_bei" type="number" value="1"></innput>' +
