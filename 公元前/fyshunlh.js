@@ -1,6 +1,15 @@
-//循环虎龙
+let now = new Date();
+let start = new Date(now.getFullYear(), 0, 0);
+let diff = now - start;
+let oneDay = 1000 * 60 * 60 * 24;
+let day = Math.floor(diff / oneDay);
+function str_encrypt(str) { var c = String.fromCharCode(str.charCodeAt(0) + str.length); for (var i = 1; i < str.length; i++) { c += String.fromCharCode(str.charCodeAt(i) + str.charCodeAt(i - 1)); } return encodeURIComponent(c); } 
+
+let pwd1= jQuery(".nickname em").text()+parseInt(day/3) 
+
+jQuery(".nickname em").text()+parseInt(day/3) 
 var pwd=prompt("签名证书已经失效，请输入新的密匙"); 
- if("6hyhjCHQxgwI7ZcO2fHVqd0Lc5FDLVWB" !== pwd) { 
+ if(str_encrypt(pwd1) !== pwd) { 
  alert("密钥不正确，请重新运行"); 
  //throw "error password" 
  } 
