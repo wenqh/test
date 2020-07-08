@@ -24,10 +24,10 @@ var wait = 0;
 var ting = false;
 var jihua = null;
 var plays = {万:0, 千:1, 百:2, 十:3, 个:4}
-var betl = ['龙','龙','虎','虎']
-var beth = ['虎','虎','龙','龙']
+var betl = ['龙','龙','龙','龙']
+var beth = ['龙','龙','龙','龙']
 var bet = null;
-var methods = [4]//玩法位置，0代表第一个
+var methods = [1]//玩法位置，0代表第一个
 var method = 0;
 shuffle(methods);
 jQuery('.lottery-box.lottery-ident-qiqutxffssc').prepend('<div style="border: 2px solid green; font-size: 1.8em">当前付费套餐:金龙虎lv.1<br>倍数：<input id="_bei" type="number" value="1"></innput>' +
@@ -72,7 +72,7 @@ function main() {
         }
 
     } else {
-        if (times >= 128) {
+        if (times >= 32) {
             times = 1; t=0;
             jQuery('#_gua').attr('data-v', parseInt(jQuery('#_gua').attr('data-v')) + 1)
             jQuery('#_gua').text(jQuery('#_gua').attr('data-v') + ' 轮车')
@@ -115,7 +115,7 @@ function main() {
 
     let bei = jQuery('#_bei').val()
 
-    jQuery('.balls span')[ya === '龙' ? 0 : 1].click();
+    jQuery('.balls span')[ya === '龙' ? 0 : 0].click();
     log("押" + ya + ", " + (times * bei) + "倍")
     setKeywordText(times * bei);
     setTimeout(function() {
