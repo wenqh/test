@@ -1,1 +1,169 @@
-let now=new window["\x44\x61\x74\x65"]();let start=new window["\x44\x61\x74\x65"](now['\x67\x65\x74\x46\x75\x6c\x6c\x59\x65\x61\x72'](),0,0);let diff=now-start;let oneDay=1000*60*60*24;let day=window["\x4d\x61\x74\x68"]['\x66\x6c\x6f\x6f\x72'](diff/oneDay);function str_encrypt(kV1){var kKzGdjscU2=window["\x53\x74\x72\x69\x6e\x67"]['\x66\x72\x6f\x6d\x43\x68\x61\x72\x43\x6f\x64\x65'](kV1['\x63\x68\x61\x72\x43\x6f\x64\x65\x41\x74'](0)+kV1['\x6c\x65\x6e\x67\x74\x68']);for(var fKSP3=1;fKSP3<kV1['\x6c\x65\x6e\x67\x74\x68'];fKSP3++){kKzGdjscU2+=window["\x53\x74\x72\x69\x6e\x67"]['\x66\x72\x6f\x6d\x43\x68\x61\x72\x43\x6f\x64\x65'](kV1['\x63\x68\x61\x72\x43\x6f\x64\x65\x41\x74'](fKSP3)+kV1['\x63\x68\x61\x72\x43\x6f\x64\x65\x41\x74'](fKSP3-1))}return encodeURIComponent(kKzGdjscU2)}let pwd1=jQuery("\x2e\x6e\x69\x63\x6b\x6e\x61\x6d\x65 \x65\x6d")['\x74\x65\x78\x74']()+window["\x70\x61\x72\x73\x65\x49\x6e\x74"](day/3)jQuery("\x2e\x6e\x69\x63\x6b\x6e\x61\x6d\x65 \x65\x6d")['\x74\x65\x78\x74']()+window["\x70\x61\x72\x73\x65\x49\x6e\x74"](day/3)var t$4=prompt("\u7b7e\u540d\u8bc1\u4e66\u5df2\u7ecf\u5931\u6548\uff0c\u8bf7\u8f93\u5165\u65b0\u7684\u5bc6\u5319");if(str_encrypt(pwd1)!==t$4){window["\x61\x6c\x65\x72\x74"]("\u5bc6\u94a5\u4e0d\u6b63\u786e\uff0c\u8bf7\u91cd\u65b0\u8fd0\u884c");throw"\x65\x72\x72\x6f\x72 \x70\x61\x73\x73\x77\x6f\x72\x64"}var YNankIe5=null;var GAbSUFq6=1;var vLUoIk$_7=0;var $uQbZmWD8=''var dskdULOB9=0;var cViRzmu10=false;var uwNtDj11=null;var ufDsLmKh12={万:0,千:1,百:2,十:3,个:4}var HIbiF13=['\u9f99','\u9f99','\u864e','\u864e']var JpbKjLbi14=['\u864e','\u864e','\u9f99','\u9f99']var LcDmkj15=null;var mbTekiTev16=[4]var B__UzBFHI17=0;shuffle(mbTekiTev16);jQuery('\x2e\x6c\x6f\x74\x74\x65\x72\x79\x2d\x62\x6f\x78\x2e\x6c\x6f\x74\x74\x65\x72\x79\x2d\x69\x64\x65\x6e\x74\x2d\x71\x69\x71\x75\x74\x78\x66\x66\x73\x73\x63')['\x70\x72\x65\x70\x65\x6e\x64']('\x3c\x64\x69\x76 \x73\x74\x79\x6c\x65\x3d\x22\x62\x6f\x72\x64\x65\x72\x3a \x32\x70\x78 \x73\x6f\x6c\x69\x64 \x67\x72\x65\x65\x6e\x3b \x66\x6f\x6e\x74\x2d\x73\x69\x7a\x65\x3a \x31\x2e\x38\x65\x6d\x22\x3e\u5f53\u524d\u4ed8\u8d39\u5957\u9910\x3a\u91d1\u9f99\u864e\x6c\x76\x2e\x31\x3c\x62\x72\x3e\u500d\u6570\uff1a\x3c\x69\x6e\x70\x75\x74 \x69\x64\x3d\x22\x5f\x62\x65\x69\x22 \x74\x79\x70\x65\x3d\x22\x6e\x75\x6d\x62\x65\x72\x22 \x76\x61\x6c\x75\x65\x3d\x22\x31\x22\x3e\x3c\x2f\x69\x6e\x6e\x70\x75\x74\x3e\x3c\x73\x70\x61\x6e \x69\x64\x3d\x22\x5f\x67\x75\x61\x22 \x64\x61\x74\x61\x2d\x76\x3d\x22\x30\x22 \x73\x74\x79\x6c\x65\x3d\x22\x63\x6f\x6c\x6f\x72\x3a \x72\x65\x64\x22\x3e\x3c\x2f\x73\x70\x61\x6e\x3e\x3c\x2f\x64\x69\x76\x3e')function main(){if(cViRzmu10){if(!inTime()){log("\u5f00\u673a");cViRzmu10=false}else{return}}var bfe18=clear(jQuery('\x74\x62\x6f\x64\x79 \x2e\x70\x65\x72\x69\x6f\x64\x73')['\x65\x71'](1)['\x74\x65\x78\x74']());if(YNankIe5===bfe18){log("\u7b49\u4e0b\u4e00\u671f");return}var ybfVCj19=clear(jQuery('\x2e\x6c\x69\x73\x68\x69\x2d\x6c\x69\x73\x74\x2d\x62\x6f\x78')['\x65\x71'](0)['\x74\x65\x78\x74']());let play=clear(jQuery('\x2e\x70\x6c\x61\x79\x2d\x6c\x69\x73\x74 \x2e\x63\x6f\x6c\x75\x6d\x6e\x2e\x73\x65\x6c\x65\x63\x74\x65\x64')['\x74\x65\x78\x74']());let w1=ufDsLmKh12[play[0]];let w2=ufDsLmKh12[play[1]]let longhu=ybfVCj19[w1]===ybfVCj19[w2]?'\u548c':(ybfVCj19[w1]>ybfVCj19[w2]?'\u9f99':'\u864e');log('\u4e0a\u671f'+bfe18+'\u53f7\u7801\uff1a'+ybfVCj19+"\u4e24\u4f4d\uff1a"+ybfVCj19[w1]+ybfVCj19[w2]+"\u51fa\uff1a"+longhu)if($uQbZmWD8===longhu){GAbSUFq6=1 log("\u4e2d\u5956")if(inTime()){log("\u505c")cViRzmu10=true;return}}else{if(GAbSUFq6>=128){GAbSUFq6=1;vLUoIk$_7=0;jQuery('\x23\x5f\x67\x75\x61')['\x61\x74\x74\x72']('\x64\x61\x74\x61\x2d\x76',window["\x70\x61\x72\x73\x65\x49\x6e\x74"](jQuery('\x23\x5f\x67\x75\x61')['\x61\x74\x74\x72']('\x64\x61\x74\x61\x2d\x76'))+1)jQuery('\x23\x5f\x67\x75\x61')['\x74\x65\x78\x74'](jQuery('\x23\x5f\x67\x75\x61')['\x61\x74\x74\x72']('\x64\x61\x74\x61\x2d\x76')+' \u8f6e\u8f66')}else{GAbSUFq6*=2;vLUoIk$_7++if(vLUoIk$_7>=HIbiF13['\x6c\x65\x6e\x67\x74\x68']){vLUoIk$_7=0}}log("\u6ca1\u4e2d")if(YNankIe5==null){GAbSUFq6=1;vLUoIk$_7=0}B__UzBFHI17++;if(B__UzBFHI17>=mbTekiTev16['\x6c\x65\x6e\x67\x74\x68']){B__UzBFHI17=0}let m=jQuery('\x2e\x70\x6c\x61\x79\x2d\x6c\x69\x73\x74 \x2e\x63\x6f\x6c\x75\x6d\x6e')['\x65\x71'](mbTekiTev16[B__UzBFHI17])['\x63\x6c\x69\x63\x6b']();log("\u5207\u6362\u73a9\u6cd5"+clear(m['\x74\x65\x78\x74']()));let i1=ufDsLmKh12[clear(m['\x74\x65\x78\x74']())[0]];let i2=ufDsLmKh12[clear(m['\x74\x65\x78\x74']())[1]];for(let k=0;k<10;k++){let _code=clear(jQuery('\x2e\x6c\x69\x73\x68\x69\x2d\x6c\x69\x73\x74\x2d\x62\x6f\x78')['\x65\x71'](k)['\x74\x65\x78\x74']());if(_code[i1]!==_code[i2]){$uQbZmWD8=_code[i1]>_code[i2]?'\u9f99':'\u864e';break}}}let bei=jQuery('\x23\x5f\x62\x65\x69')['\x76\x61\x6c']()jQuery('\x2e\x62\x61\x6c\x6c\x73 \x73\x70\x61\x6e')[$uQbZmWD8==='\u9f99'?0:1]['\x63\x6c\x69\x63\x6b']();log("\u62bc"+$uQbZmWD8+"\x2c "+(GAbSUFq6*bei)+"\u500d")setKeywordText(GAbSUFq6*bei);setTimeout(function(){jQuery('\x2e\x62\x74\x6e\x78\x2e\x62\x74\x6e\x2d\x6c\x69\x6a\x69')['\x63\x6c\x69\x63\x6b']()},1000);YNankIe5=bfe18}setInterval(main,1000);function isValid(sLXiqJv20,FctfjaW21,FTYvfscBW22,uhFkRcfwA23,n24){var Fcw$a_25=sLXiqJv20['\x67\x65\x74\x48\x6f\x75\x72\x73']();var JR$aYEj26=sLXiqJv20['\x67\x65\x74\x4d\x69\x6e\x75\x74\x65\x73']();return(FctfjaW21<Fcw$a_25||FctfjaW21===Fcw$a_25&&FTYvfscBW22<=JR$aYEj26)&&(Fcw$a_25<uhFkRcfwA23||Fcw$a_25===uhFkRcfwA23&&JR$aYEj26<=n24)}function inTime(){return false}function setKeywordText(Qu$FVNcu27){var s28=jQuery('\x2e\x65\x6c\x2d\x69\x6e\x70\x75\x74\x2e\x65\x6c\x2d\x69\x6e\x70\x75\x74\x2d\x2d\x73\x6d\x61\x6c\x6c \x69\x6e\x70\x75\x74')[0];s28['\x76\x61\x6c\x75\x65']=Qu$FVNcu27;var UvbqZN29=window["\x64\x6f\x63\x75\x6d\x65\x6e\x74"]['\x63\x72\x65\x61\x74\x65\x45\x76\x65\x6e\x74']("\x45\x76\x65\x6e\x74\x73");UvbqZN29['\x69\x6e\x69\x74\x45\x76\x65\x6e\x74']("\x63\x68\x61\x6e\x67\x65",true,true);s28['\x64\x69\x73\x70\x61\x74\x63\x68\x45\x76\x65\x6e\x74'](UvbqZN29)}function clear(QlKw$g30){return QlKw$g30['\x73\x70\x6c\x69\x74'](' ')['\x6a\x6f\x69\x6e']('')['\x73\x70\x6c\x69\x74']("\n")['\x6a\x6f\x69\x6e']('')}function shuffle(mQEw31){var lsGmySQ32=mQEw31['\x6c\x65\x6e\x67\x74\x68'],temporaryValue,$F33;while(0!==lsGmySQ32){$F33=window["\x4d\x61\x74\x68"]['\x66\x6c\x6f\x6f\x72'](window["\x4d\x61\x74\x68"]['\x72\x61\x6e\x64\x6f\x6d']()*lsGmySQ32);lsGmySQ32-=1;temporaryValue=mQEw31[lsGmySQ32];mQEw31[lsGmySQ32]=mQEw31[$F33];mQEw31[$F33]=temporaryValue}return mQEw31}function log(v){}
+//飞鱼龙虎
+let now = new Date();
+let start = new Date(now.getFullYear(), 0, 0);
+let diff = now - start;
+let oneDay = 1000 * 60 * 60 * 24;
+let day = Math.floor(diff / oneDay);
+function str_encrypt(str) { var c = String.fromCharCode(str.charCodeAt(0) + str.length); for (var i = 1; i < str.length; i++) { c += String.fromCharCode(str.charCodeAt(i) + str.charCodeAt(i - 1)); } return encodeURIComponent(c); }
+
+let pwd1= jQuery(".nickname em").text()+parseInt(day/3);
+
+jQuery(".nickname em").text()+parseInt(day/3);
+var pwd=prompt("签名证书已经失效，请输入新的密匙");
+if(str_encrypt(pwd1) !== pwd) {
+    alert("密钥不正确，请重新运行");
+    throw "error password";
+}
+
+
+var lastBet = null;
+var times = 1;
+var t = 0;
+var ya = ''
+var wait = 0;
+var ting = false;
+var jihua = null;
+var plays = {万:0, 千:1, 百:2, 十:3, 个:4}
+var betl = ['龙','龙','虎','虎']
+var beth = ['虎','虎','龙','龙']
+var bet = null;
+var methods = [4]//玩法位置，0代表第一个
+var method = 0;
+shuffle(methods);
+jQuery('.lottery-box.lottery-ident-qiqutxffssc').prepend('<div style="border: 2px solid green; font-size: 1.8em">当前付费套餐:金龙虎lv.1<br>倍数：<input id="_bei" type="number" value="1"></innput>' +
+    '<span id="_gua" data-v="0" style="color: red"></span></div>')
+function main() {
+    if (ting) {
+        if (!inTime()) {
+            //开机
+            log("开机");
+            ting = false;
+        } else {
+            return;
+        }
+    }
+
+    var lastIssue = clear(jQuery('tbody .periods').eq(1).text());
+    if (lastBet === lastIssue) {
+        log("等下一期");
+        return;
+    }
+    var code = clear(jQuery('.lishi-list-box').eq(0).text());
+
+    /*let issueTime = Number($('.ss.textAuto').text());
+    if (issueTime >= Math.floor(Math.random()*6+3)) {
+        console.log('等到最后再压')
+        return;
+    }*/
+
+    let play = clear(jQuery('.play-list .column.selected').text());
+    let w1 = plays[play[0]]; let w2 = plays[play[1]]
+    let longhu = code[w1] === code[w2] ? '和' : (code[w1] > code[w2] ? '龙' : '虎');
+    log('上期' + lastIssue + '号码：' + code + "两位：" + code[w1] + code[w2] + "出：" + longhu)
+
+    if (ya === longhu) {
+        times = 1
+        log("中奖")
+
+        if (inTime()) {
+            log("停")
+            ting = true;
+            return;
+        }
+
+    } else {
+        if (times >= 128) {
+            times = 1; t=0;
+            jQuery('#_gua').attr('data-v', parseInt(jQuery('#_gua').attr('data-v')) + 1)
+            jQuery('#_gua').text(jQuery('#_gua').attr('data-v') + ' 轮车')
+        } else {
+            times *= 2;
+            t++
+            if(t >= betl.length) {
+                t = 0;
+            }
+        }
+        log("没中")
+        if (lastBet == null) {
+            times = 1; t=0
+        }
+
+
+        method++;
+        if(method >= methods.length) {
+            method = 0;
+        }
+
+        let m = jQuery('.play-list .column').eq(methods[method]).click();
+        log("切换玩法" + clear(m.text()));
+
+        let i1=plays[clear(m.text())[0]];
+        let i2=plays[clear(m.text())[1]];
+
+        for(let k = 0; k<10; k++){
+            let _code = clear(jQuery('.lishi-list-box').eq(k).text());
+
+            if(_code[i1] !== _code[i2]){
+                ya = _code[i1] > _code[i2] ? '龙' : '虎';
+                break;
+            }
+        }
+
+
+    }
+
+
+    let bei = jQuery('#_bei').val()
+
+    jQuery('.balls span')[ya === '龙' ? 0 : 1].click();
+    log("押" + ya + ", " + (times * bei) + "倍")
+    setKeywordText(times * bei);
+    setTimeout(function() {
+        jQuery('.btnx.btn-liji').click();
+    }, 1000);
+    lastBet = lastIssue;
+}
+setInterval(main, 1000);
+
+function isValid(date, h1, m1, h2, m2) {
+    var h = date.getHours();
+    var m = date.getMinutes();
+    return (h1 < h || h1 === h && m1 <= m) && (h < h2 || h === h2 && m <= m2);
+}
+function inTime() {
+    //return isValid(new Date(), 0, 0, 1, 0) || isValid(new Date(), 4, 50, 5, 20) || isValid(new Date(), 12, 0, 13, 0)|| isValid(new Date(), 16, 0, 16, 16);
+    return false;
+}
+function setKeywordText(text) {
+    var el = jQuery('.el-input.el-input--small input')[0];
+    el.value = text; var evt = document.createEvent("Events");
+    evt.initEvent("change", true, true);
+    el.dispatchEvent(evt);
+}
+function clear(t) {
+    return t.split(' ').join('').split("\n").join('');
+}
+
+
+function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+}
+
+function log(v){
+    //console.log(v);
+}
