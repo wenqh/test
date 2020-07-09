@@ -77,7 +77,7 @@ function main() {
         times = 1
         console.log("中奖")
     } else {
-        if (times >= 64) {
+        if (times >= 32) {
             times = 1
             jQuery('#_gua').attr('data-v', parseInt(jQuery('#_gua').attr('data-v')) + 1)
             jQuery('#_gua').text(jQuery('#_gua').attr('data-v') + ' 轮车')
