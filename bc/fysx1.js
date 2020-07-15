@@ -164,6 +164,6 @@ function clear(t) {
 }
 
 function inTime() {
-    return isValid(new Date(), 22, 20, 23, 59) || isValid(new Date(), 0, 0, 0, 30)isValid(new Date(), 4, 30, 6, 30) || isValid(new Date(), 10, 0, 11, 0)|| isValid(new Date(), 16, 30, 18, 16);
+    return isValid(new Date(), 8, 50, 10, 50) || isValid(new Date(), 14, 55, 17, 20)isValid(new Date(), 20, 30, 23, 00);
     
 }
