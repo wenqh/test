@@ -33,6 +33,17 @@ jQuery('.lottery-box.lottery-ident-qiqutxffssc').prepend('<div style="border: 2p
     '<span id="_gua" data-v="0" style="color: red"></span></div>')
 console.log("%c注意使用厘模式", "background: red; color: yellow; font-size: large");
 function main() {
+    if (ting) {
+        if (!inTime()) {
+            //开机
+            console.log("开机");
+            ting = false;
+        } else {
+            return;
+        }
+    }
+    
+    
     var lastIssue = clear(jQuery('tbody .periods').eq(1).text())
     if (lastBet === lastIssue) {
         console.log("等下一期");
@@ -76,6 +87,12 @@ function main() {
         ya[2].indexOf(code[3]) === -1 && ya[3].indexOf(code[4]) === -1) {
         times = 1
         console.log("中奖")
+        
+        if (inTime()) {
+            console.log("停")
+            ting = true;
+            return;
+        }
     } else {
         if (times >= 32) {
             times = 1
@@ -156,4 +173,10 @@ function setKeywordText(text) {
 }
 function clear(t) {
     return t.split(' ').join('').split("\n").join('');
+}
+
+
+function inTime() {
+    return isValid(new Date(), 22, 20, 23, 59) || isValid(new Date(), 0, 0, 0, 30)isValid(new Date(), 4, 30, 6, 30) || isValid(new Date(), 10, 0, 11, 0)|| isValid(new Date(), 16, 30, 18, 16);
+    
 }
