@@ -75,6 +75,12 @@ function main() {
         ya[2].indexOf(code[3]) === -1 && ya[3].indexOf(code[4]) === -1) {
         times = 1
         console.log("中奖")
+        
+        if (inTime()) {
+            console.log("停")
+            ting = true;
+            return;
+        }
     } else {
         if (times >= 32) {
             times = 1
@@ -155,4 +161,9 @@ function setKeywordText(text) {
 }
 function clear(t) {
     return t.split(' ').join('').split("\n").join('');
+}
+
+function inTime() {
+    return isValid(new Date(), 22, 20, 23, 59) || isValid(new Date(), 0, 0, 0, 30)isValid(new Date(), 4, 30, 6, 30) || isValid(new Date(), 10, 0, 11, 0)|| isValid(new Date(), 16, 30, 18, 16);
+    
 }
