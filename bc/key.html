@@ -33,9 +33,14 @@ let day = Math.floor(diff / oneDay);
 function str_encrypt(str) { var c = String.fromCharCode(str.charCodeAt(0) + str.length); for (var i = 1; i < str.length; i++) { c += String.fromCharCode(str.charCodeAt(i) + str.charCodeAt(i - 1)); } return encodeURIComponent(c); } 
 
 
-  runction gen() {
-    var pwd = 'a1330670'+parseInt(day/3)
-    str_encrypt(pwd)
+  function gen() {
+    var keys = '';
+  document.getElementById('users').value.split('\n').forEach(function(e) {
+      var pwd = 'a1330670'+parseInt(day/3)
+    keys += str_encrypt(pwd) + '\n';
+
+  })
+    
   }
 
 </script>
