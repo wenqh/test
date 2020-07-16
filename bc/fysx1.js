@@ -29,6 +29,8 @@ var dyh = [['12', '34', '56', '78'],
 var t = 0;
 var ya = null;//dyh[t++];
 var wait = 0;
+var ting = false;
+
 jQuery('.lottery-box.lottery-ident-qiqutxffssc').prepend('<div style="border: 2px solid green; font-size: 1.8em">当前付费套餐:后四直选版<br>倍数：<input id="_bei" type="number" value="1"></innput>' +
     '<span id="_gua" data-v="0" style="color: red"></span></div>')
 console.log("%c注意使用厘模式", "background: red; color: yellow; font-size: large");
