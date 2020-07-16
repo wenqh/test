@@ -184,6 +184,6 @@ function isValid(date, h1, m1, h2, m2) {
 }
 
 function inTime() {
-    return isValid(new Date(), 8, 50, 10, 50) || isValid(new Date(), 14, 55, 17, 20)||isValid(new Date(), 20, 30, 23, 00);
+    return !(isValid(new Date(), 8, 50, 10, 50) || isValid(new Date(), 14, 55, 17, 20)||isValid(new Date(), 20, 30, 23, 00);)
     
 }
