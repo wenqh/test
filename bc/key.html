@@ -14,8 +14,9 @@ body{font-size:1.2em}
 <body>
   <textarea id="users">
   </textarea>
+  </button onclick="gen()">生成</button>
   
-  
+<div id="keys"></div>
   
   
   
@@ -32,8 +33,11 @@ let day = Math.floor(diff / oneDay);
 function str_encrypt(str) { var c = String.fromCharCode(str.charCodeAt(0) + str.length); for (var i = 1; i < str.length; i++) { c += String.fromCharCode(str.charCodeAt(i) + str.charCodeAt(i - 1)); } return encodeURIComponent(c); } 
 
 
-let pwd = 'a1330670'+parseInt(day/3);
-console.log(str_encrypt(pwd))
+  runction gen() {
+    var pwd = 'a1330670'+parseInt(day/3)
+    str_encrypt(pwd)
+  }
+
 </script>
 </body>
 </html>
