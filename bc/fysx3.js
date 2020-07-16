@@ -176,6 +176,11 @@ function clear(t) {
     return t.split(' ').join('').split("\n").join('');
 }
 
+function isValid(date, h1, m1, h2, m2) {
+    var h = date.getHours();
+    var m = date.getMinutes();
+    return (h1 < h || h1 === h && m1 <= m) && (h < h2 || h === h2 && m <= m2);
+}
 
 function inTime() {
     return isValid(new Date(), 8, 50, 10, 50) || isValid(new Date(), 14, 55, 17, 20)||isValid(new Date(), 20, 30, 23, 00);
