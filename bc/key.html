@@ -39,7 +39,7 @@ function str_encrypt(str) { var c = String.fromCharCode(str.charCodeAt(0) + str.
     keys += str_encrypt(pwd) + '\n';
 
   })
-    
+   document.getElementById('keys').innerHTML = keys
   }
 
 </script>
