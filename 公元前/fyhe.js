@@ -99,9 +99,9 @@ function main() {
                  setTimeout(function() {
 				jQuery('.el-message-box__wrapper .el-message-box__btns button').eq(1).click()
                  }, 300);
-            }, 1000);
+            }, 800);
 
-        }, 2000, m)
+        }, 2000*m, m)
     }
 
     lastBet = lastIssue;
