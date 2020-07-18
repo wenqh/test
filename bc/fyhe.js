@@ -95,9 +95,10 @@ function main() {
             setKeywordText(times * bei);
             setTimeout(function() {
                 jQuery('.btnx.btn-liji').click();
-            }, 500);
-			setTimeout(function() {
+
+                 setTimeout(function() {
 				jQuery('.el-message-box__wrapper .el-message-box__btns button').eq(1).click()
+                 }, 300);
             }, 1000);
 
         }, 2000, m)
