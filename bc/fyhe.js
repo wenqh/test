@@ -53,13 +53,16 @@ function main() {
     var code = clear(jQuery('.lishi-list-box').eq(0).text());
 
     let he = false;
-    let codeCounts = code.split('').reduce((a,c)=>(a[c] = (a[c] || 0) + 1,
-    a), Object.create(null));
-    for (let i in codeCounts) {
-        if (codeCounts[i] > 1) {
-            console.log("有和 " + i)
+    let wz = -1;
+    ot:
+    for (let i=0; i<10;i++) {
+        for (let j=i+1; j<10;j++) {
+           wz++;
+           if (code[i] === code[j]&&methods.includes(wz)) {
+            console.log("有和" + i)
             he = true;
-            break;
+            break ot;
+          }
         }
     }
 
@@ -94,7 +97,7 @@ function main() {
                 jQuery('.btnx.btn-liji').click();
             }, 500);
 			setTimeout(function() {
-				jQuery('.el-message-box__wrapper .el-message-box__btns button').eq(1)
+				jQuery('.el-message-box__wrapper .el-message-box__btns button').eq(1).click()
             }, 1000);
 
         }, 2000, m)
