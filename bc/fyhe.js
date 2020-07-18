@@ -36,7 +36,7 @@ var plays = {
     个: 4
 }
 var bet = null;
-var methods = [8,9]
+var methods = [0,1,4,7,8,9]
 //玩法位置，0代表第一个
 var method = 0;
 
