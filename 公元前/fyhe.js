@@ -55,8 +55,8 @@ function main() {
     let he = false;
     let wz = -1;
     ot:
-    for (let i=0; i<10;i++) {
-        for (let j=i+1; j<10;j++) {
+    for (let i=0; i<5;i++) {
+        for (let j=i+1; j<5;j++) {
            wz++;
            if (code[i] === code[j]&&methods.includes(wz)) {
             console.log("有和" + i)
@@ -67,7 +67,7 @@ function main() {
     }
 
     if (he) {
-        times = 1
+        //times = 1
         log("中奖")
     } else {
         if (times >= 128) {
