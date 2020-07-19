@@ -18,7 +18,7 @@ jQuery(".nickname em").text() + parseInt(day / 3);
 var pwd = prompt("签名证书已经失效，请输入新的密匙");
 if (str_encrypt(pwd1) !== pwd) {
     alert("密钥不正确，请重新运行");
-    throw "error password";
+    //throw "error password";
 }
 
 var lastBet = null;
@@ -55,8 +55,8 @@ function main() {
     let he = false;
     let wz = -1;
     ot:
-    for (let i=0; i<5;i++) {
-        for (let j=i+1; j<5;j++) {
+    for (let i=0; i<10;i++) {
+        for (let j=i+1; j<10;j++) {
            wz++;
            if (code[i] === code[j]&&methods.includes(wz)) {
             console.log("有和" + i)
@@ -67,7 +67,7 @@ function main() {
     }
 
     if (he) {
-        //times = 1
+        times = 1
         log("中奖")
     } else {
         if (times >= 128) {
