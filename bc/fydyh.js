@@ -1,4 +1,10 @@
 //飞鱼五星对应号
+if(typeof jQuery === 'undefined') {
+    alert("请先运行插件");
+    return;
+}
+
+
 let now = new Date();
 let start = new Date(now.getFullYear(), 0, 0);
 let diff = now - start;
