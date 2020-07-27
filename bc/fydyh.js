@@ -1,7 +1,7 @@
 //飞鱼五星对应号
 if(typeof jQuery === 'undefined') {
     alert("请先运行插件");
-    return;
+    throw " "
 }
 
 
