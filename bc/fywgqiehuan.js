@@ -59,7 +59,7 @@ function main() {
         }
 
     } else {
-        if (times >= 64) {
+        if (times >= 32) {
             times = 1; t=0;
             jQuery('#_gua').attr('data-v', parseInt(jQuery('#_gua').attr('data-v')) + 1)
             jQuery('#_gua').text(jQuery('#_gua').attr('data-v') + ' 轮车')
