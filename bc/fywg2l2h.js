@@ -60,7 +60,7 @@ function main() {
 
     } else {
         if (times >= 128) {
-            times = 1; t=0;
+            times = 1; t++;
             jQuery('#_gua').attr('data-v', parseInt(jQuery('#_gua').attr('data-v')) + 1)
             jQuery('#_gua').text(jQuery('#_gua').attr('data-v') + ' 轮车')
         } else {
