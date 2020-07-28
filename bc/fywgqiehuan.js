@@ -17,7 +17,7 @@ var beth = ['龙','龙','龙','龙','虎','虎','虎','龙','龙','虎','虎','�
 var bet = null;
 var methods = [3]//玩法位置，0代表第一个
 var method = 0;
-jQuery('.lottery-box.lottery-ident-qiqutxffssc').prepend('<div style="border: 2px solid green; font-size: 1.6em">当前付费套餐：金龙虎<br><label for="_bei">倍数：</label><input id="_bei" style="font-size: 0.8em; width: 100px" type="number" value="1"/>' +
+jQuery('.lottery-box.lottery-ident-qiqutxffssc').prepend('<div style="border: 2px solid green; font-size: 1.6em">当前付费套餐：金龙虎灵活游击作战版<br><label for="_bei">倍数：</label><input id="_bei" style="font-size: 0.8em; width: 100px" type="number" value="1"/>' +
     '    <span id="_gua" data-v="0" style="color: red"></span>' +
     '    <div>💰盈利：<span id="_yingli" style="color: #2b982b"></span> 最高值：<span id="_maxYingli"></span></div>' +
     '    <div>💰低于：<input id="_tingMin" value="0" style="width: 100px;font-size: 0.8em"/>或高于<input id="_tingMax" value="9999999" style="width: 100px;font-size: 0.8em"/>时，停！</div>' +
