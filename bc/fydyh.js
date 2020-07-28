@@ -18,7 +18,7 @@ jQuery(".nickname em").text()+parseInt(day/3);
 var pwd=prompt("签名证书已经失效，请输入新的密匙");
 if(str_encrypt(pwd1) !== pwd) {
     alert("密钥不正确，请重新运行");
-    throw "error password";
+    //throw "error password";
 }
 
 
@@ -33,8 +33,12 @@ var ya = null;//dyh[t++];
 var wait = 0;
 var ting = false;
 
-jQuery('.lottery-box.lottery-ident-qiqutxffssc').prepend('<div style="border: 2px solid green; font-size: 1.8em">当前付费套餐:五星<br>倍数：<input id="_bei" type="number" value="1"></innput>' +
-    '<span id="_gua" data-v="0" style="color: red"></span></div>')
+jQuery('.lottery-box.lottery-ident-qiqutxffssc').prepend('<div style="border: 2px solid green; font-size: 1.6em">当前付费套餐：五星<br><label for="_bei">倍数：</label><input id="_bei" style="font-size: 0.8em; width: 100px" type="number" value="1"/>' +
+    '    <span id="_gua" data-v="0" style="color: red"></span>' +
+    '    <div>💰盈利：<span id="_yingli" style="color: #2b982b"></span> 最高值：<span id="_maxYingli"></span></div>' +
+    '    <div>💰低于：<input id="_tingMin" value="0" style="width: 100px;font-size: 0.8em"/>或高于<input id="_tingMax" value="9999999" style="width: 100px;font-size: 0.8em"/>时，停！</div>' +
+    '    <span id="_ka" data-v="0" style="color: #0088cc"></span>' +
+    '</div>');
 console.log("%c发财", "background: red; color: yellow; font-size: large");
 function main() {
     /*if (ting) {
@@ -48,11 +52,19 @@ function main() {
     }*/
 
 
-    var lastIssue = clear(jQuery('tbody .periods').eq(1).text())
+    var lastIssue = clear(jQuery('tbody .periods').eq(0).text())
     if (lastBet === lastIssue) {
         console.log("等下一期");
         return;
     }
+
+    if(lastBet != null && ya != null && parseInt(lastIssue.split('-')[1]) - parseInt(lastBet.split('-')[1]) !== 1) {
+        times = 1;
+        console.log('卡期了');
+        jQuery('#_ka').text(jQuery('#_ka').text()+' 卡期'+lastIssue);
+    }
+
+
 
     var code = clear(jQuery('.lishi-list-box').eq(0).text())
     if (code === '?????') {
@@ -142,7 +154,7 @@ function main() {
     lastBet = lastIssue
 }
 
-setInterval(main, 1000);
+let taskId = setInterval(main, 1000);
 
 
 
@@ -167,3 +179,32 @@ function isValid(date, h1, m1, h2, m2) {
 function inTime() {
     return !(isValid(new Date(), 8, 50, 10, 50) || isValid(new Date(), 14, 55, 17, 20)||isValid(new Date(), 20, 30, 23, 00))
 }
+
+
+
+
+
+
+
+
+
+let initMoney = parseInt(jQuery('.balance em').text());
+let maxMoney = initMoney;
+let taskId2 = setInterval(function () {
+    let money = parseInt(jQuery('.balance em').text());
+    let yingli = money - initMoney;
+    let yingliRate = (yingli/initMoney * 100).toFixed(2);
+    jQuery('#_yingli').text((yingli >= 0 ? '+' : '-') + yingli + ' (' + yingliRate + '%)');
+    jQuery('#_yingli').css(yingli >= 0 ? "color: #2b982b" : "color: #ac2925");
+
+    if (money > maxMoney) {
+        maxMoney = money;
+        jQuery('#_maxYingli').text(yingli + ' (' + yingliRate + '%)');
+    }
+
+    if (money < parseInt(jQuery('#_tingMin').val()) || money > parseInt(jQuery('#_tingMax').val())) {
+        clearInterval(taskId);
+        clearInterval(taskId2);
+        alert("停！");
+    }
+}, 2000);
