@@ -39,6 +39,14 @@ function main() {
         console.log("等下一期");
         return;
     }
+
+
+if(lastBet != null && ya != null && parseInt(lastIssue.split('-')[1]) - parseInt(lastBet.split('-')[1]) !== 1) {
+        times = 1;
+        console.log('卡期了');
+        jQuery('#_ka').text(jQuery('#_ka').text()+' 卡期'+lastIssue);
+    }
+
     var code = clear(jQuery('.lishi-list-box').eq(0).text());
 
     /*let issueTime = Number($('.ss.textAuto').text());
