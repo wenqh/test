@@ -17,8 +17,12 @@ var beth = ['龙','龙','龙','龙','虎','虎','虎','龙','龙','虎','虎','�
 var bet = null;
 var methods = [3]//玩法位置，0代表第一个
 var method = 0;
-jQuery('.lottery-box.lottery-ident-qiqutxffssc').prepend('<div style="border: 2px solid green; font-size: 1.8em">倍数：<input id="_bei" type="number" value="1"></innput>' +
-    '<span id="_gua" data-v="0" style="color: red"></span></div>')
+jQuery('.lottery-box.lottery-ident-qiqutxffssc').prepend('<div style="border: 2px solid green; font-size: 1.6em">当前付费套餐：五星<br><label for="_bei">倍数：</label><input id="_bei" style="font-size: 0.8em; width: 100px" type="number" value="1"/>' +
+    '    <span id="_gua" data-v="0" style="color: red"></span>' +
+    '    <div>💰盈利：<span id="_yingli" style="color: #2b982b"></span> 最高值：<span id="_maxYingli"></span></div>' +
+    '    <div>💰低于：<input id="_tingMin" value="0" style="width: 100px;font-size: 0.8em"/>或高于<input id="_tingMax" value="9999999" style="width: 100px;font-size: 0.8em"/>时，停！</div>' +
+    '    <span id="_ka" data-v="0" style="color: #0088cc"></span>' +
+    '</div>');
 function main() {
     if (ting) {
         if (!inTime()) {
@@ -110,7 +114,7 @@ function main() {
     }, 1000);
     lastBet = lastIssue;
 }
-setInterval(main, 1000);
+let taskId = setInterval(main, 1000);
 
 function isValid(date, h1, m1, h2, m2) {
     var h = date.getHours();
@@ -128,3 +132,32 @@ function setKeywordText(text) {
 function clear(t) {
     return t.split(' ').join('').split("\n").join('');
 }
+
+
+
+
+
+
+
+
+
+let initMoney = parseInt(jQuery('.balance em').text());
+let maxMoney = initMoney;
+let taskId2 = setInterval(function () {
+    let money = parseInt(jQuery('.balance em').text());
+    let yingli = money - initMoney;
+    let yingliRate = (yingli/initMoney * 100).toFixed(2);
+    jQuery('#_yingli').text((yingli >= 0 ? '+' : '-') + yingli + ' (' + yingliRate + '%)');
+    jQuery('#_yingli').css(yingli >= 0 ? "color: #2b982b" : "color: #ac2925");
+
+    if (money > maxMoney) {
+        maxMoney = money;
+        jQuery('#_maxYingli').text(yingli + ' (' + yingliRate + '%)');
+    }
+
+    if (money < parseInt(jQuery('#_tingMin').val()) || money > parseInt(jQuery('#_tingMax').val())) {
+        clearInterval(taskId);
+        clearInterval(taskId2);
+        alert("停！");
+    }
+}, 2000);
