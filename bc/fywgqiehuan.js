@@ -12,7 +12,7 @@ var wait = 0;
 var ting = false;
 var jihua = null;
 var plays = {万:0, 千:1, 百:2, 十:3, 个:4}
-var bet = ['虎','龙','龙','龙','虎','虎','龙','虎']
+var bet = ['虎','龙','龙','虎','虎','虎','龙','龙']
 var methods = [3]//玩法位置，0代表第一个
 var method = 0;
 jQuery('.lottery-box.lottery-ident-qiqutxffssc').prepend('<div style="border: 2px solid green; font-size: 1.6em">当前付费套餐：金龙虎灵活游击作战版<br><label for="_bei">倍数：</label><input id="_bei" style="font-size: 0.8em; width: 100px" type="number" value="1"/>' +
@@ -69,7 +69,7 @@ if(lastBet != null && ya != null && parseInt(lastIssue.split('-')[1]) - parseInt
         }
 
     } else {
-        if (times >= 32) {
+        if (times >= 64) {
             times = 1; t=0;
             jQuery('#_gua').attr('data-v', parseInt(jQuery('#_gua').attr('data-v')) + 1)
             jQuery('#_gua').text(jQuery('#_gua').attr('data-v') + ' 轮车')
