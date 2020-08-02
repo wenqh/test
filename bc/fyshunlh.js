@@ -30,7 +30,8 @@ var bet = null;
 var methods = [4]//玩法位置，0代表第一个
 var method = 0;
 shuffle(methods);
-jQuery('.lottery-box.lottery-ident-qiqutxffssc').prepend('<div style="border: 2px solid green; font-size: 1.8em">当前付费套餐:金龙虎lv.1<br>倍数：<input id="_bei" type="number" value="1"></innput>' +
+//.lottery-box.lottery-ident-qiqutxffssc
+jQuery('body').prepend('<div style="border: 2px solid green; font-size: 1.8em">当前付费套餐:金龙虎lv.1<br>倍数：<input id="_bei" type="number" value="1"></innput>' +
     '<span id="_gua" data-v="0" style="color: red"></span></div>')
 function main() {
     if (ting) {
