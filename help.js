@@ -1,5 +1,5 @@
 (async () => {
-  await import('http://code.jquery.com/jquery-3.3.1.min.js')
+  await import('https://code.jquery.com/jquery-3.3.1.min.js')
   // Library ready
   console.log(jQuery)
   
