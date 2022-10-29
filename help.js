@@ -1,5 +1,5 @@
 (async () => {
-  await import('https://code.jquery.com/jquery-3.3.1.min.js')
+  await import('https://code.jquery.com/jquery-2.2.4.min.js')
   // Library ready
   console.log(jQuery)
   
@@ -23,7 +23,7 @@
   $('.play-area .tools li:first-child span').click();
   $('.play-area .balls.smwidth li:nth-child('+(n+1)+') span').click();
  });
- $('#_bet button').click(function(e) {
+ $('#_help button').dblclick(function(e) {
   $('.btn-liji').click();
  })
 })()
