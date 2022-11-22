@@ -20,7 +20,7 @@
   const n = parseInt($(this).text());
   console.log(n+1);
   
-  $('.play-area .tools li:first-child span').click();
+  //$('.play-area .tools li:first-child span').click();
   $('.play-area .balls.smwidth li:nth-child('+(n+1)+') span').click();
  });
  $('#_help button').dblclick(function(e) {
