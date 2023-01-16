@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Clipboard API: event demonstration</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="stylesheet" href="./css/main.css" />
+<body>
+
+  <h1>Clipboard API: event demonstration</h1>
+
+  <p>This page uses <a href="https://developer.mozilla.org/Web/API/Clipboard_API">Clipboard API</a> events.</p>
+
+
+  <h2>Copy</h2>
+
+  <p>Any text on this page can be selected then:</p>
+
+  <ul>
+    <li>copied with <kbd>Ctrl</kbd>|<kbd>Cmd</kbd> + <kbd>C</kbd></li>
+    <li>cut with <kbd>Ctrl</kbd>|<kbd>Cmd</kbd> + <kbd>X</kbd></li>
+  </ul>
+
+  <p>The cut/copy event makes the clipboard text uppercase. Try pasting it into another application such as a text editor.</p>
+
+
+  <h2>Paste</h2>
+
+  <form action="#">
+
+    <p>
+      <label for="field1" class="block">Paste here using <kbd>Ctrl</kbd>|<kbd>Cmd</kbd> + <kbd>V</kbd>:</label>
+      <textarea id="field1" rows="10" cols="40"></textarea>
+    </p>
+
+    <button type="reset">clear</button>
+
+    <p>Text pasted into this box replaces the entire content and adds a 'pasted:' label.</p>
+
+  </form>
+
+<script type="module">
+const body = document.body;
+
+body.addEventListener('cut', cutCopyHandler);
+body.addEventListener('copy', cutCopyHandler);
+
+document.getElementById('field1').addEventListener('paste', pasteEvent);
+
+
+// cut or copy event handler
+function cutCopyHandler(e) {
+
+  const selection = document.getSelection();
+  e.clipboardData.setData('text/plain', selection.toString().toUpperCase());
+
+  if (e.type === 'cut') selection.deleteFromDocument();
+
+  e.preventDefault();
+
+}
+
+
+// paste event handler
+function pasteEvent(e) {
+
+  const paste = 'pasted:\n' + (e.clipboardData || window.clipboardData).getData('text');
+
+  e.target.value = paste;
+
+  e.preventDefault();
+}
+
+</script>
+</body>
+</html>
