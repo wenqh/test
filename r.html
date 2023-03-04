@@ -14,7 +14,7 @@ document.addEventListener('paste', async function(e) {
 	var html = e.clipboardData.getData('text/html') || e.clipboardData.getData('text');
 			
 alert(html);
-document.getElementById('target').innerHTML = pastedText
+document.getElementById('target').innerHTML = html
 });
 </script>
 </body>
