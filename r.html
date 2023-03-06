@@ -9,7 +9,6 @@
 <input>
 <textarea id="textarea"></textarea>
 <div id="target"></div>
-	<button id="last">最新页面</button>
 <script>
 document.addEventListener('paste', async function(e) {
 			
@@ -17,13 +16,7 @@ document.addEventListener('paste', async function(e) {
 			
 alert(html);
 document.getElementById('target').innerHTML = html
-document.getElementById("textarea").value=html
-});
 
-	document.getElementById('last').addEventListener('click', async function(e) {
-			
-	  const resp = await fetch('http://localhost:9222/status');
-alert(resp)
 
 });
 </script>
