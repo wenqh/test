@@ -17,7 +17,7 @@ document.getElementById('target').innerHTML = html
 
 var result="";
 document.querySelectorAll('[hrefs]').forEach((e) => result+=`<a href="${e.getAttribute('hrefs')}">${e.innerHTML}</a>`)
-alert(result)
+document.getElementById('textarea').value=result
 });
 </script>
 </body>
