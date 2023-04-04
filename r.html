@@ -13,11 +13,11 @@
 document.addEventListener('paste', async function(e) {
 			
 	var html = e.clipboardData.getData('text/html') || e.clipboardData.getData('text');
-			
-alert(html);
 document.getElementById('target').innerHTML = html
 
-
+var result="";
+document.querySelectorAll('[hrefs]').forEach((e) => result+=`<a href="${e.getAttribute('hrefs')}">${e.innerHTML}</a>`)
+alert(result)
 });
 </script>
 </body>
