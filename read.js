@@ -9,7 +9,7 @@ document.body.appendChild(tool);
 //tool = tool.contentWindow.document.body;
 const btncss = 'border-radius:6px;background:#4CAF50;color:#FFF;border:none;padding:4px 16px';
 tool.innerHTML = `<img src="${url}?url=${document.location.href}&preload=false" style="display:none">
-<a href="${url}?url=${document.location.href}" style="color:#2196F3">URL</a>
+<a href="${url}?url=${document.location.href}" style="color:#2196F3;font-size:0.5em">URL</a>
 <form action="${url}" method="post" accept-charset="UTF-8" style="flex-direction: column;display: flex;">
 <input name="url" type="hidden" value="${document.location.href}">
 <input name="body" type="hidden">
@@ -38,16 +38,20 @@ tool.querySelector("form").addEventListener("submit", (e) => {
 
 let timer;
 tool.querySelector("#scroll").addEventListener("click", (e) => {
-    if (timer) {
-        clearInterval(timer);
-        timer = null;
-        return
-    }
-    let i = 0;
-    timer = setInterval(() => {
-        window.scrollTo(0, 0);
-        window.scrollTo(0, document.body.scrollHeight);
-        if (++i %2510 == 0)
-            tool.querySelector("[type='submit']").click();
-    }, 1000);
+	let i = 0;
+    if (!timer) {
+		timer = setInterval(() => {
+			window.scrollTo(0, 0);
+			window.scrollTo(0, document.body.scrollHeight);
+			if (++i %2510 == 0)
+				tool.querySelector("[type='submit']").click();
+		}, 1000);
+		e.target.style.background = 'red';
+		return;
+	}
+	
+	clearInterval(timer);
+	timer = null;
+	e.target.style.cssText = btncss;
+    
 })
