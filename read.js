@@ -13,7 +13,7 @@
 (function () {
     'use strict';
 
-    let url = 'http://192.168.1.112:9222/setting';
+    let url = 'https://192.168.1.112:9222/setting';
     //let url = 'http://66.112.212.234:9222/setting';
     if (!document) {
         alert("脚本执行失败未初始化文档" + document)
