@@ -25,7 +25,7 @@
     tool.style.cssText = `height: 100px; width: 60px; border: unset; display: flex;flex-direction: column; position:fixed;top1:70px;bottom: 10%;right:0;font-size:${size}px;z-index:998;background:#bbbbbb`;
 		document.body.appendChild(tool);
 		tool = tool.contentWindow.document.body;
-	tool.innerHTML = `<img src="${url}?url=${document.location.href}&preload=false" style="display:none"><a href="${url}?url=${document.location.href}">URL</a><form action="${url}" method="post" accept-charset="UTF-8"><input name="url" type="hidden" value="${document.location.href}"><input name="body" type="hidden"><button type="submit" id="_sendtxt">文字</button><button id="scroll">滚动</button></form>`;
+	tool.innerHTML = `<img src="${url}?url=${document.location.href}&preload=false" style="display:none"><a href="${url}?url=${document.location.href}">URL</a><form action="${url}" method="post" accept-charset="UTF-8"><input name="url" type="hidden" value="${document.location.href}"><input name="body" type="hidden"><button type="submit" id="_sendtxt">文字i</button><button id="scroll">滚动</button></form>`;
 
     //document.addEventListener("DOMContentLoaded", (e) => {
     //    document.body.appendChild(tool)
