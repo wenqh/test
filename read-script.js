@@ -10,7 +10,6 @@
 // @exclude http://139.224.198.132:9222/*
 // @exclude https://www.google.com*
 // ==/UserScript==
-alert(7);
 (function() {
     'use strict';
 
