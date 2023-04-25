@@ -1,1 +1,1 @@
-alert(8)
+alert(document)
