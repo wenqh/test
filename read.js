@@ -46,12 +46,12 @@ tool.querySelector("#scroll").addEventListener("click", (e) => {
 			if (++i %2510 == 0)
 				tool.querySelector("[type='submit']").click();
 		}, 1000);
-		e.target.style.background = 'red';
+		e.currentTarget.style.background = 'red';
 		return;
 	}
 	
 	clearInterval(timer);
 	timer = null;
-	e.target.style.cssText = btncss;
+	e.currentTarget.style.cssText = btncss;
     
 })
