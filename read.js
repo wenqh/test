@@ -9,7 +9,7 @@ document.body.appendChild(tool);
 //tool = tool.contentWindow.document.body;
 const btncss = 'border-radius:6px;background:#4CAF50;color:#FFF;border:none;padding:4px 16px;margin:1px';
 tool.innerHTML = `<img src="${url}?url=${document.location.href}&preload=false" style="display:none">
-<a href="${url}?url=${document.location.href}" style="color:#2196F3;font-size:0.6em">URL</a>
+<a href="${url}?url=${encodeURIComponent(document.location.href})" style="color:#2196F3;font-size:0.6em">URL</a>
 <form action="${url}" method="post" accept-charset="UTF-8" style="flex-direction: column;display: flex;">
 <input name="url" type="hidden" value="${document.location.href}">
 <input name="body" type="hidden">
