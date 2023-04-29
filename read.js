@@ -7,11 +7,12 @@ tool.style.cssText = `position:fixed;bottom: 10%;right:0;font-size:${size}px;z-i
 document.body.appendChild(tool);
 //height: 100px; width: 80px; border: unset;
 //tool = tool.contentWindow.document.body;
+let enUrl = encodeURIComponent(document.location.href});
 const btncss = 'border-radius:6px;background:#4CAF50;color:#FFF;border:none;padding:4px 16px;margin:1px';
-tool.innerHTML = `<img src="${url}?url=${document.location.href}&preload=false" style="display:none">
-<a href="${url}?url=${encodeURIComponent(document.location.href})" style="color:#2196F3;font-size:0.6em">URL</a>
+tool.innerHTML = `<img src="${url}?url=${enUrl}&preload=false" style="display:none">
+<a href="${url}?url=${enUrl})" style="color:#2196F3;font-size:0.6em">URL</a>
 <form action="${url}" method="post" accept-charset="UTF-8" style="flex-direction: column;display: flex;">
-<input name="url" type="hidden" value="${document.location.href}">
+<input name="url" type="hidden" value="${enUrl}">
 <input name="body" type="hidden">
 <button type="submit" id="_sendtxt" style="${btncss}">文字</button>
 <button id="scroll" style="${btncss}">滚动</button>
