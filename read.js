@@ -14,14 +14,13 @@ tool.innerHTML = `<img src="${url}?url=${enUrl}&preload=false" style="display:no
 <form action="${url}" method="post" accept-charset="UTF-8" style="flex-direction: column;display: flex;">
 <input name="url" type="hidden" value="${enUrl}">
 <input name="body" type="hidden">
-<button type="button" id="_send" style="${btncss}">提取</button>
+<button id="_send" style="${btncss}">提取</button>
 <button id="scroll" style="${btncss}">滚动</button>
 </form>`;
 
-tool.querySelector("[type='button']").addEventListener("click", (e) => {
+tool.querySelector("_send").addEventListener("click", (e) => {
 	submit(0);
-});
-tool.querySelector("[type='button']").addEventListener("contextmenu", (e) => {
+}).addEventListener("contextmenu", (e) => {
 	submit(1);
 });
 
@@ -45,7 +44,7 @@ function submit(type) {
     
 
     tool.querySelector("[name='body']").value = body;
-    //tool.querySelector("[type='submit']").innerText = "OK";
+    tool.querySelector("#_send").innerText = "OK";
 
 	tool.querySelector("form").submit();
 }
@@ -58,7 +57,7 @@ tool.querySelector("#scroll").addEventListener("click", (e) => {
 			window.scrollTo(0, 0);
 			window.scrollTo(0, document.body.scrollHeight);
 			if (++i %2510 == 0)
-				tool.querySelector("[type='submit']").click();
+				submit(0);
 		}, 1000);
 		e.currentTarget.style.background = 'red';
 		return;
