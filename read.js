@@ -7,7 +7,7 @@ tool.style.cssText = `position:fixed;bottom: 10%;right:0;font-size:${size}px;z-i
 document.body.appendChild(tool);
 //height: 100px; width: 80px; border: unset;
 //tool = tool.contentWindow.document.body;
-let enUrl = encodeURIComponent(document.location.href});
+let enUrl = encodeURIComponent(document.location.href);
 const btncss = 'border-radius:6px;background:#4CAF50;color:#FFF;border:none;padding:4px 16px;margin:1px';
 tool.innerHTML = `<img src="${url}?url=${enUrl}&preload=false" style="display:none">
 <a href="${url}?url=${enUrl})" style="color:#2196F3;font-size:0.6em">URL</a>
