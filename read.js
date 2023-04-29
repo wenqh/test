@@ -19,12 +19,10 @@ tool.innerHTML = `<img src="${url}?url=${enUrl}&preload=false" style="display:no
 </form>`;
 
 tool.querySelector("[type='button']").addEventListener("click", (e) => {
-	alert(1);
-	submit();
+	submit(0);
 });
 tool.querySelector("[type='button']").addEventListener("contextmenu", (e) => {
-	alert(2);
-	submit();
+	submit(1);
 });
 
 function submit(type) {
