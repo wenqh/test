@@ -20,7 +20,8 @@ tool.innerHTML = `<img src="${url}?url=${enUrl}&preload=false" style="display:no
 
 tool.querySelector("#_send").addEventListener("click", (e) => {
 	submit(0);
-}).addEventListener("contextmenu", (e) => {
+});
+tool.querySelector("#_send").addEventListener("contextmenu", (e) => {
 	submit(1);
 });
 
