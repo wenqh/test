@@ -14,8 +14,8 @@ tool.innerHTML = `<img src="${url}?url=${enUrl}&preload=false" style="display:no
 <form action="${url}" method="post" accept-charset="UTF-8" style="flex-direction: column;display: flex;">
 <input name="url" type="hidden" value="${enUrl}">
 <input name="body" type="hidden">
-<button id="_send" style="${btncss}">提取</button>
-<button id="scroll" style="${btncss}">滚动</button>
+<button type='button' id="_send" style="${btncss}">提取</button>
+<button type='button' id="scroll" style="${btncss}">滚动</button>
 </form>`;
 
 tool.querySelector("#_send").addEventListener("click", (e) => {
