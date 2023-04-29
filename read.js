@@ -14,28 +14,43 @@ tool.innerHTML = `<img src="${url}?url=${enUrl}&preload=false" style="display:no
 <form action="${url}" method="post" accept-charset="UTF-8" style="flex-direction: column;display: flex;">
 <input name="url" type="hidden" value="${enUrl}">
 <input name="body" type="hidden">
-<button type="submit" id="_sendtxt" style="${btncss}">文字</button>
+<button type="button" id="_send" style="${btncss}">提取</button>
 <button id="scroll" style="${btncss}">滚动</button>
 </form>`;
 
+tool.querySelector("[type='button']").addEventListener("click", (e) => {
+	alert(1);
+	submit();
+});
+tool.querySelector("[type='button']").addEventListener("contextmenu", (e) => {
+	alert(2);
+	submit();
+});
 
-
-tool.querySelector("form").addEventListener("submit", (e) => {
+function submit(type) {
     let ad = document.querySelector('.KfeCollection-VipRecommendCard');
     if (ad) {
         ad.remove()
     }
 
-    let text = document.body.innerText.replace(/\n+/g, '\n').replace(/^\u200b\n/gm, '');
+	let body;
+	if(type == 0) {
+		let text = document.body.innerText.replace(/\n+/g, '\n').replace(/^\u200b\n/gm, '');
+		let links = '';
+		document.querySelectorAll("a").forEach(e => {
+			links += `<a href="?url=${encodeURIComponent(new URL(e.getAttribute('href'),document.location.href).href)}">${e.innerText}</a>\n`;
+		});
+		body = document.title + "\n<![CDATA[" + text + links + "]]>"
+	} else {
+		body = document.body.innerHTML;
+	}
+    
 
-    let links = '';
-    document.querySelectorAll("a").forEach(e => {
-        links += `<a href="?url=${encodeURIComponent(new URL(e.getAttribute('href'),document.location.href).href)}">${e.innerText}</a>\n`;
-    });
+    tool.querySelector("[name='body']").value = body;
+    //tool.querySelector("[type='submit']").innerText = "OK";
 
-    tool.querySelector("[name='body']").value = document.title + "\n<![CDATA[" + text + links + "]]>"; //"<pre>"+text+"</pre>";
-    tool.querySelector("[type='submit']").innerText = "OK";
-});
+	tool.querySelector("form").submit();
+}
 
 let timer;
 tool.querySelector("#scroll").addEventListener("click", (e) => {
@@ -54,5 +69,4 @@ tool.querySelector("#scroll").addEventListener("click", (e) => {
 	clearInterval(timer);
 	timer = null;
 	e.currentTarget.style.cssText = btncss;
-    
 })
