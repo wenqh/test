@@ -18,7 +18,7 @@ tool.innerHTML = `<img src="${url}?url=${enUrl}&preload=false" style="display:no
 <button id="scroll" style="${btncss}">滚动</button>
 </form>`;
 
-tool.querySelector("_send").addEventListener("click", (e) => {
+tool.querySelector("#_send").addEventListener("click", (e) => {
 	submit(0);
 }).addEventListener("contextmenu", (e) => {
 	submit(1);
