@@ -2,7 +2,7 @@ let javascript;let url = 'https://192.168.1.112/setting';
 
 let tool = document.createElement('div');
 
-let size = window.innerWidth <= 393 ? 24 : 58;
+let size = window.innerWidth <= 393 ? 24 : 68;
 tool.style.cssText = `position:fixed;bottom: 10%;right:0;font-size:${size}px;z-index:998;`;
 document.body.appendChild(tool);
 //height: 100px; width: 80px; border: unset;
