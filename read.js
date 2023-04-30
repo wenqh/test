@@ -10,7 +10,7 @@ document.body.appendChild(tool);
 let enUrl = encodeURIComponent(document.location.href);
 const btncss = `border-radius:6px;background:#4CAF50;color:#FFF;border:none;padding:4px 16px;margin:1px;font-size:${size}px;`;
 tool.innerHTML = `<img src="${url}?url=${enUrl}&preload=false" style="display:none">
-<a href="${url}?url=${enUrl})" style="color:#2196F3;font-size:0.6em">URL</a>
+<a href="${url}?url=${enUrl}" style="color:#2196F3;font-size:0.6em">URL</a>
 <form action="${url}" method="post" accept-charset="UTF-8" style="flex-direction: column;display: flex;">
 <input name="url" type="hidden" value="${enUrl}">
 <input name="body" type="hidden">
