@@ -5,8 +5,8 @@ let tool = document.createElement('div');
 let size = window.innerWidth <= 393 ? 24 : 68;
 tool.style.cssText = `position:fixed;bottom: 10%;right:0;font-size:${size}px;z-index:998;`;
 document.body.appendChild(tool);
-//height: 100px; width: 80px; border: unset;
-//tool = tool.contentWindow.document.body;
+/*height: 100px; width: 80px; border: unset;
+/tool = tool.contentWindow.document.body;*/
 let enUrl = encodeURIComponent(document.location.href);
 const btncss = 'border-radius:6px;background:#4CAF50;color:#FFF;border:none;padding:4px 16px;margin:1px';
 tool.innerHTML = `<img src="${url}?url=${enUrl}&preload=false" style="display:none">
@@ -52,7 +52,7 @@ function submit(type) {
 
 let task;
 tool.querySelector("#scroll").addEventListener("click", (e) => {
-	let i = 0, times = 0
+	let i = 0, times = 0;
     if (!task) {
 		task = setInterval(() => {
 			window.scrollTo(0, 0);
