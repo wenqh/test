@@ -50,21 +50,23 @@ function submit(type) {
 	tool.querySelector("form").submit();
 }
 
-let timer;
+let task;
 tool.querySelector("#scroll").addEventListener("click", (e) => {
-	let i = 0;
-    if (!timer) {
-		timer = setInterval(() => {
+	let i = 0, times = 0
+    if (!task) {
+		task = setInterval(() => {
 			window.scrollTo(0, 0);
 			window.scrollTo(0, document.body.scrollHeight);
-			if (++i %2510 == 0)
+			if (i++ == times * (10 + times)) {
 				submit(0);
+				times++;
+			}
 		}, 1000);
 		e.currentTarget.style.background = 'red';
 		return;
 	}
 	
-	clearInterval(timer);
-	timer = null;
+	clearInterval(task);
+	task = null;
 	e.currentTarget.style.cssText = btncss;
 })
