@@ -1,6 +1,7 @@
+#来自 https://github.com/zhaofeng-shu33/wechat-text-backup/blob/master/uncompress.py
 def uncompress(byte_str, verbose=False):
     # compress data in LZ4 format
-    offset = byte_str[0]>>4 #byte_str[0]/16 # >> 4 possible value: 14
+    offset = byte_str[0] >> 4 # possible value: 14
     next_backward_length = 4 + byte_str[0] - offset * 16
     pointer = 1
     if offset == 15:
@@ -12,7 +13,6 @@ def uncompress(byte_str, verbose=False):
     valid_bytes = byte_str[pointer:pointer + offset]
     pointer += offset
     total_len = len(byte_str)
-
     while pointer < total_len:   
         backward_length = next_backward_length
         distance = int.from_bytes(byte_str[pointer:pointer + 2], 'little')
@@ -42,12 +42,7 @@ def uncompress(byte_str, verbose=False):
             for _ in range(backward_length):
                 valid_bytes += valid_bytes[-1 :]
         else:
-            #print('start@@@')
-            #print(distance)
-            #print(backward_length)
-
             while -1 * distance + backward_length > 0:
-                print(-1 * distance)
                 valid_bytes += valid_bytes[-1 * distance : -1]
                 backward_length -= (distance - 1)
             if -1 * distance + backward_length == 0:
